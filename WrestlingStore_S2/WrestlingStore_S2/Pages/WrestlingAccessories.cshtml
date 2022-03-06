@@ -1,0 +1,24 @@
+﻿@page
+@model WrestlingStore_S2.Pages.WrestlingAccessoriesModel
+@{
+    ViewData["Title"] = "WrestlingAccessories";
+}
+<!DOCTYPE html>
+<form id="form">
+    <img class="logo" src="/images/logo.jpg" alt="">
+    <div class="search">
+        <input type="search" id="searchbar" name="search"
+               placeholder="Search for a product...">
+        <button>Search</button>
+    </div>
+</form>
+<nav class="categories">
+    <ul>
+        <li> <a asp-area="" asp-page="/WrestlingShoes"> Wrestling Shoes</a> </li>
+        <li> <a asp-area="" asp-page="/WrestlingClothes"> Wrestling Clothes</a> </li>
+        <li> <a asp-area="" asp-page="/WrestlingAccessories"> Wrestling Accessories</a> </li>
+    </ul>
+</nav>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

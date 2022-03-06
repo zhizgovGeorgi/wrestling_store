@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GnyPQ9X+YdTr8CDey7HWh6/FAq6jfHtjmvQV65bPbE1/KWiOIz1fUIrrDNTN9iQnxRdWHavyaVEFWswdex3jag==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\DAL\\DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Georgi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Georgi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

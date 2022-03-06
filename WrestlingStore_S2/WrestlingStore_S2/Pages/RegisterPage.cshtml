@@ -1,0 +1,52 @@
+﻿@page
+@model MyWebStore.Pages.RegisterPageModel
+@{
+    ViewData["Title"] = "RegisterPage";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<body>
+
+    <header>
+
+        <form method="post">
+
+
+            <div class="register">
+                <label for="info">
+                    You are new here and you want to continue shopping?!
+                    Feel free to enter the required personal data and join us!
+                </label>
+                <label> Name:</label> <span asp-validation-for="register.fName"></span>
+                <input asp-for="register.fName" id="name">
+                <label> Surname:</label> <span asp-validation-for="register.lName"></span>
+                <input asp-for="register.lName" id="surname">
+                <label> Email:</label> <span asp-validation-for="register.email"></span>
+                <input asp-for="register.email" id="email">
+                <label> Adress:</label> <span asp-validation-for="register.email"></span>
+                <input asp-for="register.adress" id="adress">
+                <label> Password:</label> <span asp-validation-for="register.password"></span>
+                <input type="password" asp-for="register.password" id="password">
+                <input type="submit" value="Register" />
+
+
+            </div>
+
+        </form>
+
+
+
+    </header>
+
+
+
+</body>
+
+</html>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+@using System.Security.Claims;
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" href="/images/logo.jpg">
+</head>
+@*<header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">MyWebStore</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>*@
+<body>
+    <div class="clear"></div>
+    <nav>
+        @if (User.IsInRole("User") == true || User.IsInRole("Administrator"))
+        {
+            <h1 class="welcome">Welcome,   @User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value @User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Surname).Value</h1>
+
+        }
+        else
+if (User.IsInRole("User") == false || User.IsInRole("Administrator"))
+        {
+            <h1 class="welcome">Welcome</h1>
+
+        }
+        <ul>
+            @if (User.IsInRole("User") == true)
+            {
+                <li><a asp-area="" asp-page="/Profile"> Profile</a></li>
+                <li><a asp-area="" asp-page="/Cart">My cart</a></li>
+            }
+            else if (User.IsInRole("Administrator") == true)
+            {
+                <li><a asp-area="" asp-page="/Profile"> Profile</a></li>
+                <li><a asp-area="" asp-page="/AddProduct"> Add Product</a></li>
+
+            }
+            else
+        if (User.IsInRole("User") == false || User.IsInRole("Administrator") == false)
+            {
+                <li> <a asp-area="" asp-page="/RegisterPage"> Register</a> </li>
+                <li> <a asp-area="" asp-page="/LogIn">Log in</a> </li>
+            }
+
+
+            <li> <a asp-area="" asp-page="/Index">Home page</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p class="initials">&copy; Zhizgov Enterprize</p>
+        @*<div class="infofilling">
+                <h1>Enter your information</h1>
+                <h2>Fill in the gaps bellow:</h2>
+
+                <label for="name-input"> Name:</label>
+                <input type="text" id="name">
+                <label for="surname-input"> Surname:</label>
+                <input type="text" id="surname">
+                <label for="email-input"> Email adress:</label>
+                <input type="email" id="email">
+                <button> Submit</button>
+            </div>*@
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@using System.Security.Claims;
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<body>
+
+    <header>
+
+        <form id="form">
+            <img class="logo" src="/images/logo.jpg" alt="">
+            <div class="search">
+                <input type="search" id="searchbar" name="search"
+                       placeholder="Search for a product...">
+                <button>Search</button>
+            </div>
+        </form>
+
+
+
+
+
+    </header>
+    <nav class="categories">
+        <ul>
+            <li> <a asp-area="" asp-page="/WrestlingShoes"> Wrestling Shoes</a> </li>
+            <li> <a asp-area="" asp-page="/WrestlingClothes"> Wrestling Clothes</a> </li>
+            <li> <a asp-area="" asp-page="/WrestlingAccessories"> Wrestling Accessories</a> </li>
+        </ul>
+    </nav>
+    @*<section class="homeimages">
+            <img src="/wad-s2-georgi-zhizgov-website/wr_shoe.jpg" alt="">
+            <img src="/wad-s2-georgi-zhizgov-website/wr_shoe.jpg" alt="">
+        </section>*@
+
+    <div class="homepicscontainer">
+        <img class="hompic" src="/images/wr_shoe.jpg" alt="">
+        <img class="hompic" src="/images/wrshoe2.jpg" alt="">
+        <img class="hompic" src="/images/wrshoes3.jpg" alt="">
+    </div>
+
+
+
+
+</body>
+
+</html>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
+

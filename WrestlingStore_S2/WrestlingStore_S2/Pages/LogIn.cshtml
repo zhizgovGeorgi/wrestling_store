@@ -1,0 +1,40 @@
+﻿@page
+@model WrestlingStore_S2.Pages.LogInModel
+@{
+    ViewData["Title"] = "Log In";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<body>
+
+    <header>
+        <form method="post">
+
+            <div class="login">
+                <label for="info">Enter your credentials in order to log in: </label>
+                <label> Email:</label> <span asp-validation-for="login.email"></span>
+                <input asp-for="login.email" id="email">
+                <label>Password:</label> <span asp-validation-for="login.password"></span>
+                <input type="password" asp-for="login.password" id="password">
+                <input type="submit" value="Log In" />
+
+
+            </div>
+
+        </form>
+
+    </header>
+
+
+
+
+</body>
+
+</html>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
