@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SB7IjCPjtGUuaIfXDJzTLhhhwaSz2yTBcVb0aATKOvJ5zdjxPokCT8YOElEWoxV9ZedfBlXEtD2GEWoSp2gIng==",
+  "dgSpecHash": "p5APllfslkVb4gZFcOnJP5KuzQHLZga/bRY8WmhVME2I0ETMi0zuFKvRcF16UdeNeaRwLwa7dON2Ryw0PZo+YA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\LogicLayer\\LogicLayer.csproj",
+  "projectFilePath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\Modules\\Modules.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Georgi\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Georgi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

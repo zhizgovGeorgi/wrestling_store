@@ -34,6 +34,32 @@
         "runtime": {
           "lib/netstandard2.0/System.ComponentModel.Annotations.dll": {}
         }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Modules": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "Modules/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Modules.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modules.dll": {}
+        }
       }
     }
   },
@@ -271,10 +297,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "Modules/1.0.0": {
+      "type": "project",
+      "path": "../Modules/Modules.csproj",
+      "msbuildProject": "../Modules/Modules.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "DAL >= 1.0.0",
+      "Modules >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "System.ComponentModel.Annotations >= 5.0.0"
     ]
@@ -304,7 +342,14 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\DAL\\DAL.csproj"
+            },
+            "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\Modules\\Modules.csproj": {
+              "projectPath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\Modules\\Modules.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

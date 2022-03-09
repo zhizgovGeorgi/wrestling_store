@@ -1,0 +1,5 @@
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Modules\bin\Debug\netstandard2.0\Modules.deps.json
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Modules\bin\Debug\netstandard2.0\Modules.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Modules\obj\Debug\netstandard2.0\Modules.AssemblyInfoInputs.cache
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Modules\obj\Debug\netstandard2.0\Modules.AssemblyInfo.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Modules\obj\Debug\netstandard2.0\Modules.csprojAssemblyReference.cache
