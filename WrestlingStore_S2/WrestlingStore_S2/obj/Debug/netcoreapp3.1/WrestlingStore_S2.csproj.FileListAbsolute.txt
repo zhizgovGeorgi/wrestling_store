@@ -41,3 +41,12 @@ C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Wrest
 C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\bin\Debug\netcoreapp3.1\LogicLayer.pdb
 C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\RegisterPage.cshtml.g.cs
 C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\WrestlingAccessories.cshtml.g.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\bin\Debug\netcoreapp3.1\DAL.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\bin\Debug\netcoreapp3.1\Modules.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\bin\Debug\netcoreapp3.1\DAL.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\bin\Debug\netcoreapp3.1\Modules.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\AddProduct.cshtml.g.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\Cart.cshtml.g.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\ShowProduct.cshtml.g.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\WrestlingClothes.cshtml.g.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\WrestlingStore_S2\obj\Debug\netcoreapp3.1\Razor\Pages\WrestlingShoes.cshtml.g.cs

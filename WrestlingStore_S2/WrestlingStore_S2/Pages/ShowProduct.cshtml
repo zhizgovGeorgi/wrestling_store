@@ -1,0 +1,73 @@
+﻿@page
+@model WrestlingStore_S2.Pages.ShowProductModel
+@{
+    ViewData["Title"] = "ProductShow";
+ }
+
+
+
+
+<!DOCTYPE html>
+<form id="form">
+    <img class="logo" src="/images/logo.jpg" alt="">
+    <div class="search">
+        <input type="search" id="searchbar" name="search"
+               placeholder="Search for a product...">
+        <button>Search</button>
+    </div>
+</form>
+<nav class="categories">
+    <ul>
+        <li> <a asp-area="" asp-page="/WrestlingShoes"> Wrestling Shoes</a> </li>
+        <li> <a asp-area="" asp-page="/WrestlingClothes"> Wrestling Clothes</a> </li>
+        <li> <a asp-area="" asp-page="/WrestlingAccessories"> Wrestling Accessories</a> </li>
+    </ul>
+</nav>
+<div class="singleProduct">
+    <div class="singleProductInfo">
+        @*<h2>Model: @p.prodName </h2>
+
+
+
+        <h2>Price: @p.prodPrice euro </h2>
+
+
+
+        @if (User.IsInRole("User"))
+        {
+            if (p.prodCategory == "Wrestling Shoes" || p.prodCategory == "Wrestling Clothes")
+            {
+
+                <form method="post">
+                    <label> Quantity:</label> <span asp-validation-for="cartItem.quantity"></span>
+                    <input asp-for="cartItem.quantity" id="quantity">
+
+                    <label> Size:</label> <span asp-validation-for="cartItem.size"></span>
+                    <input asp-for="cartItem.size" id="size">
+
+                    <button class="btn btn-default" asp-route-price="@p.prodPrice" asp-route-name="@p.prodName" asp-route-image="@p.prodImg" asp-page-handler="AddToCart">Add to Cart</button>
+                </form>
+            }
+            else
+            {
+                <form method="post">
+                    <label> Quantity:</label> <span asp-validation-for="cartItem.quantity"></span>
+                    <input asp-for="cartItem.quantity" id="quantity">
+                    <button class="btn btn-default" asp-route-price="@p.prodPrice" asp-route-name="@p.prodName" asp-route-image="@p.prodImg" asp-page-handler="AddToCart2">Add to Cart</button>
+                </form>
+            }
+        }
+        else if (User.IsInRole("Administrator"))
+        {
+            <form method="post"><input type="submit" value="Delete Product" /></form>
+        }
+    </div>
+    <img class="singleProductImage" src="@p.prodImg" />
+
+</div>*@
+
+
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

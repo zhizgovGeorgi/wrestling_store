@@ -1,0 +1,48 @@
+﻿@page
+@model WrestlingStore_S2.Pages.CartModel
+@{
+    ViewData["Title"] = "Cart";
+    
+}
+@using System.Security.Claims;
+
+<h1>Products you have chosen:</h1>
+@*@foreach (DataAccessLayer.DTOs.CartItemDTO c in cartItems)
+{
+    double totalForProduct = c.prodPrice * c.Quantity;
+    <div class="cartProduct">
+        <p>@c.prodName</p>
+        <img class="singleProductImage" src="@c.prodImage" />
+
+
+        <p class="priceText">@c.Quantity x  @c.prodPrice = @totalForProduct $</p>
+
+
+        <form method="post"><input asp-route-id="@c.cartID" type="submit" value="Delete Product From Cart" /></form>
+
+    </div>
+}*@
+
+
+
+
+@*@foreach (DataAccessLayer.DataLayer.CartItemDTO c in cartItems)
+    {
+        double totalForProduct = c.prodPrice * c.Quantity;
+        double totalPriceForAll = double.MaxValue;
+        if (totalForProduct > totalPriceForAll)
+        {
+            totalPriceForAll += totalForProduct;
+            continue;
+        }
+        <p>Total Price For Order: @totalPriceForAll</p>
+    }*@
+
+
+
+
+
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

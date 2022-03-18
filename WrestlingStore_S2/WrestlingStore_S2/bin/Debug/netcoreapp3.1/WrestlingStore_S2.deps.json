@@ -325,8 +325,21 @@
           "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
         }
       },
+      "DAL/1.0.0": {
+        "dependencies": {
+          "Modules": "1.0.0"
+        },
+        "runtime": {
+          "DAL.dll": {}
+        },
+        "compile": {
+          "DAL.dll": {}
+        }
+      },
       "LogicLayer/1.0.0": {
         "dependencies": {
+          "DAL": "1.0.0",
+          "Modules": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },
         "runtime": {
@@ -334,6 +347,17 @@
         },
         "compile": {
           "LogicLayer.dll": {}
+        }
+      },
+      "Modules/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "Modules.dll": {}
+        },
+        "compile": {
+          "Modules.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2037,7 +2061,17 @@
       "path": "system.componentmodel.annotations/5.0.0",
       "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
     },
+    "DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "LogicLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Modules/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

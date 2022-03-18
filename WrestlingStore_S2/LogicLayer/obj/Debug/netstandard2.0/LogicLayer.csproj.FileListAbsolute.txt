@@ -7,3 +7,8 @@ C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\Logic
 C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.csproj.CoreCompileInputs.cache
 C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.dll
 C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\bin\Debug\netstandard2.0\Modules.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\bin\Debug\netstandard2.0\Modules.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\LogicLayer\obj\Debug\netstandard2.0\LogicLayer.csproj.CopyComplete

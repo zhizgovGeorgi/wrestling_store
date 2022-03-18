@@ -1,0 +1,50 @@
+﻿@page
+@model WrestlingStore_S2.Pages.WrestlingClothesModel
+@{
+    ViewData["Title"] = "Wrestling Clothes";
+    
+}
+
+
+<!DOCTYPE html>
+<form id="form">
+    <img class="logo" src="/images/logo.jpg" alt="">
+    <div class="search">
+        <input type="search" id="searchbar" name="search"
+               placeholder="Search for a product...">
+        <button>Search</button>
+    </div>
+</form>
+<nav class="categories">
+    <ul>
+        <li> <a asp-area="" asp-page="/WrestlingShoes"> Wrestling Shoes</a> </li>
+        <li> <a asp-area="" asp-page="/WrestlingClothes"> Wrestling Clothes</a> </li>
+        <li> <a asp-area="" asp-page="/WrestlingAccessories"> Wrestling Accessories</a> </li>
+    </ul>
+</nav>
+<section id="grid_container">
+
+    @*@foreach (BussinesLayer.Models.Product p in products)
+    {
+        if (p.prodCategory == "Wrestling Clothes")
+        {
+
+
+            <form method="post">
+                <div class="product">
+                    <p>@p.prodName</p>
+                    <img class="prod_image" src="@p.prodImg">
+                    <p class="priceText">@p.prodPrice $</p>
+
+                    <a asp-page="/ProductShow" type="submit" asp-route-Name="@p.prodName" value="Check">check</a>
+                </div>
+            </form>
+
+
+        }
+
+    }*@
+
+
+</section>
+

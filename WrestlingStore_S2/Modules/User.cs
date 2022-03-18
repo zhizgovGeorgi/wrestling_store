@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Modules
 {
 
-    public class User
+    public  class User
     {
         public int id { get; set; }
 
@@ -27,27 +27,16 @@ namespace Modules
 
         public string role { get; set; }
 
-        public User(int id, string FName, string LName, string Email, string Adress, string Password, string Role)
+        public User( int id, string fName, string lName, string email, string adress, string password, string role)
         {
             this.id = id;
-            this.fName = FName;
-            this.lName = LName;
-            this.email = Email;
-            this.adress = Adress;
-            this.password = Password;
-            this.role = Role;
+            this.fName = fName;
+            this.lName = lName;
+            this.email = email;
+            this.adress = adress;
+            this.password = password;
+            this.role = role;
         }
-
-        //public User(DataAccessLayer.DTOs.UserDTO userDTO)
-        //{
-        //    id = userDTO.id;
-        //    fName = userDTO.fName;
-        //    lName = userDTO.lName;
-        //    email = userDTO.email;
-        //    adress = userDTO.adress;
-        //    password = userDTO.password;
-        //    role = userDTO.role;
-        //}
 
         public User()
         {

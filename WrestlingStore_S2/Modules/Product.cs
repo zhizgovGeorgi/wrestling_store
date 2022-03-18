@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Modules
 {
 
-    public class Product
+    public abstract class Product
     {
 
         public int prod_id { get; set; }
@@ -24,9 +24,17 @@ namespace Modules
         [Required(ErrorMessage = "Enter  image!")]
         public string prodImg { get; set; }
 
-        public Product(int prod_id,string prodName, string prodCategory, double prodPrice, string prodImg)
+
+        public int Prod_Id { get; set; }
+        public string ProdName { get; set; }
+        public string ProdCategory { get; set; }
+
+        public double ProdPrice { get; set; }
+        public string ProdImg { get; set; }
+
+        public Product(int prodId, string prodName, string prodCategory, double prodPrice, string prodImg)
         {
-            this.prod_id = prod_id;
+            this.prod_id = prodId;
             this.prodName = prodName;
             this.prodCategory = prodCategory;
             this.prodPrice = prodPrice;
@@ -47,11 +55,16 @@ namespace Modules
 
         }
 
-       public override string ToString()
+        public override string ToString()
         {
             return $"{prodName} {prodCategory} {prodPrice}";
         }
 
-        
+        public double GetPrice()
+        {
+            return prodPrice;
+        }
+
+
     }
 }

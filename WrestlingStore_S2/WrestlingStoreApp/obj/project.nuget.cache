@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZzhPLFvDZmrK+DytXsASGP8DjK/jk0INZJ3oW2R1bFr/eDKOS+FVjPrj6HxfuXnhKAGj+8bYF+0lRGRDoGRTSw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\WrestlingStoreApp\\WrestlingStoreApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Georgi\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
