@@ -1,8 +1,13 @@
 ﻿@page
 @model WrestlingStore_S2.Pages.WrestlingAccessoriesModel
 @{
-    ViewData["Title"] = "WrestlingAccessories";
+    ViewData["Title"] = "Wrestling Accessories";
+    ProductManager pm = new ProductManager();
+    Product[] products = pm.GetAllProducts();
 }
+@using Modules;
+@using LogicLayer;
+
 <!DOCTYPE html>
 <form id="form">
     <img class="logo" src="/images/logo.jpg" alt="">
@@ -19,6 +24,28 @@
         <li> <a asp-area="" asp-page="/WrestlingAccessories"> Wrestling Accessories</a> </li>
     </ul>
 </nav>
-@section scripts{
-    <partial name="_ValidationScriptsPartial" />
-}
+<section id="grid_container">
+
+    @foreach (Product p in products)
+    {
+        if (p.prodCategory == "Wrestling Accessories")
+        {
+
+
+            <form method="post">
+                <div class="product">
+                    <p>@p.prodName</p>
+                    <img class="prod_image" src="@p.prodImg">
+                    <p class="priceText">@p.prodPrice $</p>
+
+                    <a asp-page="/ProductShow" type="submit" asp-route-Name="@p.prodName" value="Check">check</a>
+                </div>
+            </form>
+
+
+        }
+
+    }
+
+
+</section>

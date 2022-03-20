@@ -9,28 +9,27 @@ namespace Modules
     {
         public int cartID { get; set; }
 
-        public string userEmail { get; set; }
+        public User user { get; set; }
 
-        public string prodName { get; set; }
-
-        public string prodImage { get; set; }
+        public Product product { get; set; }
 
         public string size { get; set; }
 
         public int quantity { get; set; }
 
-        public double prodPrice { get; set; }
+        public int totalPrice { get; set; }
+
+       
 
 
-        public CartItem(int cartID, string userEmail,  string prodName, string prodImage, string size, int quantity, double prodPrice, int totalPrice)
+        public CartItem(int cartID, User user, Product product, string size, int quantity, int totalPrice)
         {
             this.cartID = cartID;
-            this.userEmail = userEmail;
-            this.prodName = prodName;
-            this.prodImage = prodImage;
+            this.user = user;
+            this.product = product;
             this.size = size;
             this.quantity = quantity;
-            this.prodPrice = prodPrice;
+            this.totalPrice= totalPrice;
         }
 
         //public CartItem(DataAccessLayer.DTOs.CartItemDTO cartItemDTO)

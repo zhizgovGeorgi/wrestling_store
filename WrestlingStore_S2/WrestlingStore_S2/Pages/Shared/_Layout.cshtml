@@ -52,7 +52,9 @@ if (User.IsInRole("User") == false || User.IsInRole("Administrator"))
             else if (User.IsInRole("Administrator") == true)
             {
                 <li><a asp-area="" asp-page="/Profile"> Profile</a></li>
-                <li><a asp-area="" asp-page="/AddProduct"> Add Product</a></li>
+                <li><a asp-area="" asp-page="/AddWrestlingClothes"> Add Clothes</a></li>
+                <li><a asp-area="" asp-page="/AddWrestlingShoes"> Add Shoes</a></li>
+                <li><a asp-area="" asp-page="/AddWrestlingAccessories"> Add Accessories</a></li>
 
             }
             else

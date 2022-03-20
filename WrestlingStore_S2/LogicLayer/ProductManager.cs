@@ -1,4 +1,5 @@
-﻿using Modules;
+﻿using DAL;
+using Modules;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,35 +9,58 @@ namespace LogicLayer
     public class ProductManager
     {
         private List<Product> products;
+        private ProductData pd;
 
         public ProductManager()
         {
-            products = new List<Product>();
+            pd = new ProductData();
+            products = pd.ShowAllProducts();
         }
 
 
 
-        public void AddShoes(int id, string prodName, string prodCategory, double prodPrice, string prodImg, string kindOfActivity)
+        public void AddShoes( string prodName, string prodCategory, double prodPrice, string prodImg, string kindOfActivity)
         {
-            products.Add(new WrestlingClothes(id, prodName, prodCategory, prodPrice, prodImg, kindOfActivity));
+            pd.AddWrestlingShoes(prodName, prodCategory, prodPrice, prodImg, kindOfActivity );
+            Product product = new WrestlingShoes()
+            {
+                prodName = prodName,
+                prodCategory = prodCategory,
+                prodPrice = prodPrice,
+                prodImg = prodImg,
+                KindOfActivity = kindOfActivity
+
+            };
+            products.Add(product);
         }
 
-        public void AddClothes(int id, string prodName, string prodCategory, double prodPrice, string prodImg, string material)
+        public void AddClothes( string prodName, string prodCategory, double prodPrice, string prodImg, string material)
         {
-            products.Add(new WrestlingClothes(id, prodName, prodCategory, prodPrice, prodImg, material));
+            pd.AddWrestlingClothes( prodName, prodCategory, prodPrice, prodImg, material);
+            Product product = new WrestlingClothes()
+            {
+                prodName = prodName,
+                prodCategory = prodCategory,
+                prodPrice = prodPrice,
+                prodImg = prodImg,
+                Material = material
 
+            };
+            products.Add(product);
         }
 
-        public void AddAccessories(int id, string prodName, string prodCategory, double prodPrice, string prodImg)
+        public void AddAccessories( string prodName, string prodCategory, double prodPrice, string prodImg)
         {
-            products.Add(new WrestlingAccessories(id, prodName, prodCategory, prodPrice, prodImg));
-            //{
-            //    ProdName = prodName,
-            //    ProdCategory = prodCategory,
-            //    ProdPrice = prodPrice,
-            //    ProdImg = prodImg
-            //}
-            //);
+            pd.AddWrestlingAccessories(prodName, prodCategory, prodPrice, prodImg);
+            Product product = new WrestlingAccessories()
+            {
+                prodName = prodName,
+                prodCategory = prodCategory,
+                prodPrice = prodPrice,
+                prodImg = prodImg
+
+            };
+            products.Add(product);
         }
 
         public void RemoveProduct(Product p)
@@ -45,6 +69,7 @@ namespace LogicLayer
             {
                 if (p.prod_id == product.prod_id)
                 {
+                    pd.DeleteProduct(p);
                     products.Remove(p);
                     return;    
 

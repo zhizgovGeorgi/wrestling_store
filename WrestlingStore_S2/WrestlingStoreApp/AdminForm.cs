@@ -34,17 +34,17 @@ namespace WrestlingStoreApp
             {
                 if (rbWrestlingAccessories.Checked)
                 {
-                    pm.AddAccessories(Convert.ToInt32(tbProdID.Text), tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text);
+                    pm.AddAccessories( tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text);
                     LoadProducts();
                 }
                 else if (rbWrestlingClothes.Checked)
                 {
-                    pm.AddClothes(Convert.ToInt32(tbProdID.Text), tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text, tbAdditionalInfo.Text);
+                    pm.AddClothes( tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text, tbAdditionalInfo.Text);
                     LoadProducts();
                 }
                 else if (rbWrestlingShoes.Checked)
                 {
-                    pm.AddShoes(Convert.ToInt32(tbProdID.Text), tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text, tbAdditionalInfo.Text);
+                    pm.AddShoes( tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text, tbAdditionalInfo.Text);
                     LoadProducts();
                 }
                 else
@@ -104,7 +104,7 @@ namespace WrestlingStoreApp
         {
             try
             {
-                um.AddAdmin(Convert.ToInt32(tbID.Text), tbFName.Text, tbLName.Text, tbEmail.Text, tbAddress.Text, tbPassword.Text);
+                um.AddAdmin( tbFName.Text, tbLName.Text, tbEmail.Text, tbAddress.Text, tbPassword.Text);
                 LoadUsers();
             }
             catch (System.FormatException)

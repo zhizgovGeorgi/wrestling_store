@@ -42,6 +42,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -213,6 +217,9 @@
             "projectReferences": {
               "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\LogicLayer\\LogicLayer.csproj": {
                 "projectPath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\LogicLayer\\LogicLayer.csproj"
+              },
+              "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\Modules\\Modules.csproj": {
+                "projectPath": "C:\\Users\\Georgi\\Desktop\\WAD-Assignment\\wad-s2_assignment\\WrestlingStore_S2\\Modules\\Modules.csproj"
               }
             }
           }

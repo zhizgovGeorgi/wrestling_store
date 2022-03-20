@@ -1,0 +1,51 @@
+﻿@page
+@model WrestlingStore_S2.Pages.AddWrestlingAccessoriesModel
+@{
+    ViewData["Title"] = "AddWrestlingAccessories";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<body>
+
+    <header>
+
+        <form method="post">
+
+
+            <div class="addProd">
+
+
+
+                <label> Product Name:</label> <span asp-validation-for="wa.prodName"></span>
+                <input asp-for="wa.prodName" id="name">
+                <label> Product Category:</label> <span asp-validation-for="wa.prodCategory"></span>
+                <input asp-for="wa.prodCategory" id="name">
+                <label> Product Price:</label> <span asp-validation-for="wa.prodPrice"></span>
+                <input asp-for="wa.prodPrice" id="price">
+                <label> Product Image:</label> <span asp-validation-for="wa.prodImg"></span>
+                <input asp-for="wa.prodImg" id="text">
+                <input type="submit" value="Create Product" />
+
+
+            </div>
+
+        </form>
+
+
+
+    </header>
+
+
+
+</body>
+
+</html>
+
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

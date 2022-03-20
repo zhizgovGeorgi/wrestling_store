@@ -2,7 +2,11 @@
 @model WrestlingStore_S2.Pages.WrestlingShoesModel
 @{
     ViewData["Title"] = "WrestlingShoes";
+    ProductManager pm = new ProductManager();
+    Product[] products = pm.GetAllProducts();
 }
+@using Modules;
+@using LogicLayer;
 
 
 <!DOCTYPE html>
@@ -23,24 +27,27 @@
 </nav>
 <section id="grid_container">
 
-    @*@foreach (BussinesLayer.Models.Product p in products)
+
+    @foreach (Product p in products)
     {
         if (p.prodCategory == "Wrestling Shoes")
         {
-            <div class="product">
-                <p>@p.prodName</p>
-                <img class="prod_image" src="@p.prodImg">
-                <p class="priceText">@p.prodPrice $</p>
-                @if (User.IsInRole("User") || User.IsInRole("Administrator"))
-                {
+
+
+            <form method="post">
+                <div class="product">
+                    <p>@p.prodName</p>
+                    <img class="prod_image" src="@p.prodImg">
+                    <p class="priceText">@p.prodPrice $</p>
+
                     <a asp-page="/ProductShow" type="submit" asp-route-Name="@p.prodName" value="Check">check</a>
+                </div>
+            </form>
 
-                }
 
-            </div>
         }
 
-    }*@
+    }
 
 
 </section>

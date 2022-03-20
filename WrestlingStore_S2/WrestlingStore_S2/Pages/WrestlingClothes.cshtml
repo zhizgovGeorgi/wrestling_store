@@ -2,9 +2,11 @@
 @model WrestlingStore_S2.Pages.WrestlingClothesModel
 @{
     ViewData["Title"] = "Wrestling Clothes";
-    
+    ProductManager pm = new ProductManager();
+    Product[] products = pm.GetAllProducts();
 }
-
+@using Modules;
+@using LogicLayer; 
 
 <!DOCTYPE html>
 <form id="form">
@@ -24,7 +26,7 @@
 </nav>
 <section id="grid_container">
 
-    @*@foreach (BussinesLayer.Models.Product p in products)
+    @foreach (Product p in products)
     {
         if (p.prodCategory == "Wrestling Clothes")
         {
@@ -43,7 +45,7 @@
 
         }
 
-    }*@
+    }
 
 
 </section>

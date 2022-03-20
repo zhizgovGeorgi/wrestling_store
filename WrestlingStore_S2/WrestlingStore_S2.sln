@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modules", "Modules\Modules.csproj", "{37F5A917-02AE-4DCD-B219-13ACE401C496}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingStoreApp", "WrestlingStoreApp\WrestlingStoreApp.csproj", "{B87B3F7B-8E42-4B79-A2AF-21B45D5384E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WrestlingStoreApp", "WrestlingStoreApp\WrestlingStoreApp.csproj", "{B87B3F7B-8E42-4B79-A2AF-21B45D5384E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

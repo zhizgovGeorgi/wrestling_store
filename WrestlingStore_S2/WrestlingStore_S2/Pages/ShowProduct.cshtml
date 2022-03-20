@@ -1,8 +1,13 @@
 ﻿@page
 @model WrestlingStore_S2.Pages.ShowProductModel
 @{
-    ViewData["Title"] = "ProductShow";
+    ViewData["Title"] = "ShowProduct";
+    ProductManager pm = new ProductManager();
+    Product[] products = pm.GetAllProducts();
+    Product p = Model.Product;
  }
+@using Modules;
+@using LogicLayer;
 
 
 
@@ -25,7 +30,7 @@
 </nav>
 <div class="singleProduct">
     <div class="singleProductInfo">
-        @*<h2>Model: @p.prodName </h2>
+        <h2>Model: @p.prodName </h2>
 
 
 
@@ -64,7 +69,7 @@
     </div>
     <img class="singleProductImage" src="@p.prodImg" />
 
-</div>*@
+</div>
 
 
 

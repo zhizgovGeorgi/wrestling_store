@@ -1,4 +1,5 @@
-﻿using Modules;
+﻿using DAL;
+using Modules;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,19 +8,22 @@ namespace LogicLayer
 {
     public class UserManager
     {
+        private UserData ud;
         private List<User> users;
 
         public UserManager()
         {
-            users = new List<User>();
+            ud = new UserData();
+            users = ud.GetAllUsers() ;
         }
 
 
         public User GetUser(string email, string password)
         {
-            foreach (User user in users)
+            foreach (User u in users)
             {
-                if (user.email == email && user.password == password)
+                    User user = ud.ReadUser(email, password);
+                if (user.email == u.email && user.password == u.password)
                 {
                     return user;
                 }
@@ -27,31 +31,51 @@ namespace LogicLayer
             return null;
         }
 
-        public void AddUser(int id, string FName, string LName, string Email, string Adress, string Password, string Role)
+        public void AddUser(string FName, string LName, string Email, string Adress, string Password)
         {
-            users.Add(new User(id, FName, LName, Email, Adress, Password, Role));
+            ud.AddUser(FName, LName, Email, Adress, Password);
+            User user = new User()
+            {
+                fName = FName,
+                lName = LName,
+                email = Email,
+                adress = Adress,
+                password = Password
+            };
+            users.Add(user);
+
         }
 
-        public void AddAdmin(int id, string FName, string LName, string Email, string Adress, string Password)
+        public void AddAdmin( string FName, string LName, string Email, string Adress, string Password)
         {
-            users.Add(new User(id, FName, LName, Email, Adress, Password, "Administrator"));
+            ud.AddAdministrator(FName, LName, Email, Adress, Password);
+            User user = new User()
+            {
+                fName = FName,
+                lName = LName,
+                email = Email,
+                adress = Adress,
+                password = Password
+            };
+            users.Add(user);
         }
 
         public void RemoveUser(User u)
         {
             foreach (User user in users)
             {
-                if (u.id == user.id)
-                {
+                
                     users.Remove(u);
+                    ud.DeleteUser(u);
                     return;
-                }
+                
             }
-            
+
         }
 
         public List<User> GetAllUsers()
         {
+            
             return users;
         }
     }
