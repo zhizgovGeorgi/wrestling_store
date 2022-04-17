@@ -2,11 +2,12 @@
 @model WrestlingStore_S2.Pages.WrestlingAccessoriesModel
 @{
     ViewData["Title"] = "Wrestling Accessories";
-    ProductManager pm = new ProductManager();
+    ProductManager pm = new ProductManager(new ProductData());
     Product[] products = pm.GetAllProducts();
 }
 @using Modules;
 @using LogicLayer;
+@using DAL;
 
 <!DOCTYPE html>
 <form id="form">
@@ -28,17 +29,17 @@
 
     @foreach (Product p in products)
     {
-        if (p.prodCategory == "Wrestling Accessories")
+        if (p is WrestlingAccessories)
         {
 
 
             <form method="post">
                 <div class="product">
-                    <p>@p.prodName</p>
-                    <img class="prod_image" src="@p.prodImg">
-                    <p class="priceText">@p.prodPrice $</p>
+                    <p>@p.ProdName</p>
+                    <img class="prod_image" src="@p.ProdImg">
+                    <p class="priceText">@p.ProdPrice $</p>
 
-                    <a asp-page="/ProductShow" type="submit" asp-route-Name="@p.prodName" value="Check">check</a>
+                    <a href="ShowProduct?id=@p.Prod_id" type="submit" value="Check">check</a>
                 </div>
             </form>
 

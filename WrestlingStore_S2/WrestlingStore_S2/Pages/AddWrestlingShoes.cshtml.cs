@@ -6,17 +6,16 @@ using LogicLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Modules;
+using DAL;
 
 namespace WrestlingStore_S2.Pages
 {
     public class AddWrestlingShoesModel : PageModel
     {
         [BindProperty]
-        public WrestlingShoes ws { get; set; }
+        public ProductDTO ws { get; set; }
 
-
-
-        public ProductManager pm = new ProductManager();
+        public ProductManager pm = new ProductManager(new ProductData());
 
         public void OnGet()
         {
@@ -25,9 +24,10 @@ namespace WrestlingStore_S2.Pages
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                pm.AddShoes(ws.prodName, ws.prodCategory, ws.prodPrice, ws.prodImg, ws.KindOfActivity);
+                Product product = new WrestlingShoes(ws.ProdName, ws.ProdCategory, ws.ProdPrice, ws.ProdImg, ws.ProdKind);
+                pm.AddProduct(product);
 
                 return RedirectToPage("AddWrestlingShoes");
 

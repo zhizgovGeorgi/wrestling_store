@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DAL
 {
-    public class UserData
+    public class UserData : IUserDataManagement<User>
     {
         private ConnectionDB connection;
 
@@ -21,7 +21,7 @@ namespace DAL
             string sqlStatement = "DELETE FROM wad_user WHERE email = @email;";
             MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
-            command.Parameters.AddWithValue("@email", user.email);
+            command.Parameters.AddWithValue("@email", user.Email);
 
             try
             {
@@ -62,17 +62,7 @@ namespace DAL
                 while (databaseReader.Read())
                 {
 
-
-                    user = new User()
-                    {
-                        id = databaseReader.GetInt32("id"),
-                        fName = databaseReader.GetString("firstName"),
-                        lName = databaseReader.GetString("lastName"),
-                        email = databaseReader.GetString("email"),
-                        adress = databaseReader.GetString("adress"),
-                        password = databaseReader.GetString("password"),
-                        role = databaseReader.GetString("role")
-                    };
+                    user = new User(databaseReader.GetInt32("id"), databaseReader.GetString("firstName"), databaseReader.GetString("lastName"), databaseReader.GetString("email"), databaseReader.GetString("adress"), databaseReader.GetString("password"), databaseReader.GetString("role"));
                     users.Add(user);
                 }
                 return users;
@@ -111,16 +101,7 @@ namespace DAL
                 {
 
 
-                    user = new User()
-                    {
-                        id = databaseReader.GetInt32("id"),
-                        fName = databaseReader.GetString("firstName"),
-                        lName = databaseReader.GetString("lastName"),
-                        email = databaseReader.GetString("email"),
-                        adress = databaseReader.GetString("adress"),
-                        password = databaseReader.GetString("password"),
-                        role = databaseReader.GetString("role")
-                    };
+                    user = new User(databaseReader.GetInt32("id"), databaseReader.GetString("firstName"), databaseReader.GetString("lastName"), databaseReader.GetString("email"), databaseReader.GetString("adress"), databaseReader.GetString("password"), databaseReader.GetString("role"));
                     return user;
                 }
 
@@ -136,16 +117,51 @@ namespace DAL
             return null;
         }
 
-        public void AddUser(string firstName, string lastName, string email, string adress, string password)
+        public User GetUser(int id)
+        {
+            string sqlStatement = "SELECT * FROM wad_user where id = @id";
+            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+            try
+            {
+                MySqlDataReader databaseReader;
+
+                connection.GetConnection().Open();
+
+                command.Parameters.AddWithValue("@id", id);
+
+                databaseReader = command.ExecuteReader();
+
+                User user;
+
+                while (databaseReader.Read())
+                {
+                    user = new User(databaseReader.GetInt32("id"), databaseReader.GetString("firstName"), databaseReader.GetString("lastName"), databaseReader.GetString("email"), databaseReader.GetString("adress"), databaseReader.GetString("password"), databaseReader.GetString("role"));
+                    return user;
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.GetConnection().Close();
+            }
+            return null;
+        }
+
+        public void AddUser(User u)
         {
             string sqlStatement = "INSERT INTO wad_user (firstName, lastName, email, adress,  password) VALUES (@firstName, @lastName,  @email , @adress, @password);";
             MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
-            command.Parameters.AddWithValue("@firstName", firstName);
-            command.Parameters.AddWithValue("@lastname", lastName);
-            command.Parameters.AddWithValue("@email", email);
-            command.Parameters.AddWithValue("@adress", adress);
-            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@firstName", u.FName);
+            command.Parameters.AddWithValue("@lastname", u.LName);
+            command.Parameters.AddWithValue("@email", u.Email);
+            command.Parameters.AddWithValue("@adress", u.Adress);
+            command.Parameters.AddWithValue("@password", u.Password);
             command.Parameters.AddWithValue("@role", "User");
             try
             {
@@ -154,18 +170,6 @@ namespace DAL
                 connection.GetConnection().Open();
 
                 n = command.ExecuteNonQuery();
-                User user = new User()
-                {
-                    fName = firstName,
-                    lName = lastName,
-                    email = email,
-                    adress = adress,
-                    password = password,
-                    role = "User"
-                };
-
-
-
 
             }
             catch (MySqlException ex)
@@ -181,16 +185,16 @@ namespace DAL
 
 
 
-        public void AddAdministrator(string firstName, string lastName, string email, string adress, string password)
+        public void AddAdministrator(User u)
         {
             string sqlStatement = "INSERT INTO wad_user (firstName, lastName, email, adress,  password) VALUES (@firstName, @lastName,  @email , @adress, @password);";
             MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
-            command.Parameters.AddWithValue("@firstName", firstName);
-            command.Parameters.AddWithValue("@lastname", lastName);
-            command.Parameters.AddWithValue("@email", email);
-            command.Parameters.AddWithValue("@adress", adress);
-            command.Parameters.AddWithValue("@password", password);
+            command.Parameters.AddWithValue("@firstName", u.FName);
+            command.Parameters.AddWithValue("@lastname", u.LName);
+            command.Parameters.AddWithValue("@email", u.Email);
+            command.Parameters.AddWithValue("@adress", u.Adress);
+            command.Parameters.AddWithValue("@password", u.Password);
             command.Parameters.AddWithValue("@role", "Administrator");
             try
             {
@@ -199,18 +203,6 @@ namespace DAL
                 connection.GetConnection().Open();
 
                 n = command.ExecuteNonQuery();
-                User user = new User()
-                {
-                    fName = firstName,
-                    lName = lastName,
-                    email = email,
-                    adress = adress,
-                    password = password,
-                    role = "Administrator"
-                };
-
-
-
 
             }
             catch (MySqlException ex)
@@ -224,18 +216,17 @@ namespace DAL
             }
         }
 
-        public void EditUser(int id, string fName, string lName, string email, string adress, string role)
+        public void EditUser(User u)
         {
             string sql = "UPDATE wad_user SET firstName = @firstName, lastName = @lastName, email = @email, adress = @adress, role = @role WHERE id = @id";
             MySqlCommand command = new MySqlCommand(sql, connection.GetConnection());
 
             MySqlCommand cmd = new MySqlCommand(sql, connection.GetConnection());
-            cmd.Parameters.AddWithValue("@firstName", fName);
-            cmd.Parameters.AddWithValue("@lastName", lName);
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@adress", adress);
-            cmd.Parameters.AddWithValue("@role", role);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@id", u.Id);
+            command.Parameters.AddWithValue("@firstName", u.FName);
+            command.Parameters.AddWithValue("@lastname", u.LName);
+            command.Parameters.AddWithValue("@email", u.Email);
+            command.Parameters.AddWithValue("@adress", u.Adress);
             try
             {
 

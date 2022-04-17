@@ -67,6 +67,7 @@ footer {
         width: 150px;
         height: 150px;
         border: 1px solid #000;
+        margin: 3rem;
     }
 
 #searchbar {
@@ -90,7 +91,7 @@ footer {
 }
 
     .categories li {
-        margin: 0 10rem
+        margin: 0 10rem ;
     }
 
 .initials p {
@@ -267,3 +268,13 @@ span {
 .cartProduct {
     width: 75%;
 }
+
+.addingToCart{
+    margin-right: 10rem;
+}
+
+.singleProduct{
+
+}
+
+

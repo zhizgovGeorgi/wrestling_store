@@ -2,41 +2,42 @@
 @model WrestlingStore_S2.Pages.CartModel
 @{
     ViewData["Title"] = "Cart";
-    
+    OrderManager om = new OrderManager(new OrderData());
+    UserManager um = new UserManager(new UserData());
+    List<Order> orders = om.ShowOrderItems(um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value));
 }
 @using System.Security.Claims;
+@using Modules;
+@using LogicLayer;
+@using DAL;
 
 <h1>Products you have chosen:</h1>
-@*@foreach (DataAccessLayer.DTOs.CartItemDTO c in cartItems)
+@foreach (Order o in orders)
 {
-    double totalForProduct = c.prodPrice * c.Quantity;
+    if(o.Status is Status.Pending)
+    {
     <div class="cartProduct">
-        <p>@c.prodName</p>
-        <img class="singleProductImage" src="@c.prodImage" />
+        <p>@o.Product.ProdName</p>
+       <img class="singleProductImage" src="@o.Product.ProdImg" />
 
 
-        <p class="priceText">@c.Quantity x  @c.prodPrice = @totalForProduct $</p>
+        <p class="priceText">@o.Quantity x  @o.Product.ProdPrice = @o.TotalPrice $</p>
 
 
-        <form method="post"><input asp-route-id="@c.cartID" type="submit" value="Delete Product From Cart" /></form>
+        <form method="post"><input asp-route-id="@o.OrderId" type="submit" value="Delete Product From Cart" /></form>
 
     </div>
-}*@
+    }
+
+}
+
+<form method="post">
+    <button class="btn btn-default"   asp-page-handler="CompleteOrder">Complete Order</button>
+</form>
 
 
 
 
-@*@foreach (DataAccessLayer.DataLayer.CartItemDTO c in cartItems)
-    {
-        double totalForProduct = c.prodPrice * c.Quantity;
-        double totalPriceForAll = double.MaxValue;
-        if (totalForProduct > totalPriceForAll)
-        {
-            totalPriceForAll += totalForProduct;
-            continue;
-        }
-        <p>Total Price For Order: @totalPriceForAll</p>
-    }*@
 
 
 

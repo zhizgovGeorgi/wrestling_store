@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "WrestlingStoreApp/1.0.0": {
         "dependencies": {
+          "DAL": "1.0.0",
           "LogicLayer": "1.0.0"
         },
         "runtime": {
@@ -155,6 +156,7 @@
       },
       "DAL/1.0.0": {
         "dependencies": {
+          "LogicLayer": "1.0.0",
           "Modules": "1.0.0",
           "MySql.Data": "8.0.28"
         },
@@ -164,7 +166,6 @@
       },
       "LogicLayer/1.0.0": {
         "dependencies": {
-          "DAL": "1.0.0",
           "Modules": "1.0.0",
           "System.ComponentModel.Annotations": "5.0.0"
         },

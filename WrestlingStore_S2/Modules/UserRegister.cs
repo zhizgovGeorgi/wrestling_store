@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Modules
 {
-    public class Register
+    public class UserRegister
     {
        
 
@@ -29,18 +29,18 @@ namespace Modules
 
 
 
-        public Register(string FName, string LName, string Email, string Adress , string Password)
-        {
-            FName = fName;
-            LName = lName;
-            Email = email;
-            Adress = adress;
-            Password = password;
-        }
-        public Register()
-        {
+        //public UserRegister(string FName, string LName, string Email, string Adress , string Password)
+        //{
+        //    FName = fName;
+        //    LName = lName;
+        //    Email = email;
+        //    Adress = adress;
+        //    Password = password;
+        //}
+        //public UserRegister()
+        //{
 
-        }
+        //}
 
     }
 }

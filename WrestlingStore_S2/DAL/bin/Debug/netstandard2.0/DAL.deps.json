@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "DAL/1.0.0": {
         "dependencies": {
+          "LogicLayer": "1.0.0",
           "Modules": "1.0.0",
           "MySql.Data": "8.0.28",
           "NETStandard.Library": "2.0.3"
@@ -205,6 +206,15 @@
           }
         }
       },
+      "LogicLayer/1.0.0": {
+        "dependencies": {
+          "Modules": "1.0.0",
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "LogicLayer.dll": {}
+        }
+      },
       "Modules/1.0.0": {
         "dependencies": {
           "System.ComponentModel.Annotations": "5.0.0"
@@ -353,6 +363,11 @@
       "sha512": "sha512-6JX7ZdaceBiLKLkYt8zJcp4xTJd1uYyXXEkPw6mnlUIjh1gZPIVKPtRXPmY5kLf6DwZmf5YLwR3QUrRonl7l0A==",
       "path": "system.text.encoding.codepages/4.4.0",
       "hashPath": "system.text.encoding.codepages.4.4.0.nupkg.sha512"
+    },
+    "LogicLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Modules/1.0.0": {
       "type": "project",

@@ -6,13 +6,14 @@ using LogicLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Modules;
+using DAL;
 
 namespace WrestlingStore_S2.Pages
 {
     public class WrestlingClothesModel : PageModel
     {
 
-        public ProductManager pm = new ProductManager();
+        public ProductManager pm = new ProductManager(new ProductData());
         public WrestlingClothes wc { get; set; }
 
         public void OnGet()

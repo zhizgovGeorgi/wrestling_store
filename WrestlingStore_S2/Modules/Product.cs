@@ -9,28 +9,28 @@ namespace Modules
 
     public abstract class Product
     {
-
-        public int prod_id { get; set; }
-
-        [Required(ErrorMessage = "Enter  product's name!")]
-        public string prodName { get; set; }
-
-        [Required(ErrorMessage = "Enter  category!")]
-        public string prodCategory { get; set; }
-
-        [Required(ErrorMessage = "Enter  price!")]
-        public double prodPrice { get; set; }
-
-        [Required(ErrorMessage = "Enter  image!")]
-        public string prodImg { get; set; }
+        private int prod_id;
+        private string prodName;
+        private string prodCategory;
+        private double prodPrice;
+        private string prodImg;
 
 
-        public int Prod_Id { get; set; }
-        public string ProdName { get; set; }
-        public string ProdCategory { get; set; }
+        public int Prod_id { get { return this.prod_id; } }
 
-        public double ProdPrice { get; set; }
-        public string ProdImg { get; set; }
+        [Required(ErrorMessage = "Enter product's name!")]
+        public string ProdName { get { return this.prodName; } }
+
+        [Required(ErrorMessage = "Enter category!")]
+        public string ProdCategory { get { return this.prodCategory; } }
+
+        [Required(ErrorMessage = "Enter price!")]
+        public double ProdPrice { get { return this.prodPrice; } }
+
+        [Required(ErrorMessage = "Enter image!")]
+        public string ProdImg { get { return this.prodImg; } }
+
+
 
         public Product(int prodId, string prodName, string prodCategory, double prodPrice, string prodImg)
         {
@@ -41,14 +41,13 @@ namespace Modules
             this.prodImg = prodImg;
         }
 
-        //public Product(DataAccessLayer.DTOs.ProductDTO productDTO)
-        //{
-        //    prod_id = productDTO.prodId;
-        //    prodName = productDTO.prodName;
-        //    prodCategory = productDTO.prodCategory;
-        //    prodPrice = productDTO.prodPrice;
-        //    prodImg = productDTO.prodImg;
-        //}
+        public Product( string prodName, string prodCategory, double prodPrice, string prodImg)
+        {
+            this.prodName = prodName;
+            this.prodCategory = prodCategory;
+            this.prodPrice = prodPrice;
+            this.prodImg = prodImg;
+        }
 
         public Product()
         {
@@ -57,12 +56,12 @@ namespace Modules
 
         public override string ToString()
         {
-            return $"{prodName} {prodCategory} {prodPrice}";
+            return $"{ProdName} {ProdCategory} {ProdPrice}";
         }
 
         public double GetPrice()
         {
-            return prodPrice;
+            return ProdPrice;
         }
 
 

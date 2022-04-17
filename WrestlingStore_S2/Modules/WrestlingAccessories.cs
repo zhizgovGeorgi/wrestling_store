@@ -11,6 +11,14 @@ namespace Modules
 
         }
 
+
+        public WrestlingAccessories( string prodName, string prodCategory, double prodPrice, string prodImg) : base( prodName, prodCategory, prodPrice, prodImg )
+        {
+
+        }
+
+
+
         public WrestlingAccessories()
         {
 

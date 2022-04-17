@@ -9,16 +9,17 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Modules;
+using DAL;
 
 namespace WrestlingStore_S2.Pages
 {
     public class LogInModel : PageModel
     {
 
-        public UserManager um = new UserManager();
+        public UserManager um = new UserManager(new UserData());
 
         [BindProperty]
-        public LogIn login { get; set; }
+        public UserLogIn logIn { get; set; }
 
         public string Title { get; set; }
 
@@ -37,21 +38,21 @@ namespace WrestlingStore_S2.Pages
                 //var newSalt = "njkfbaijsa";
                 //var hashedPassword = hashing.ComputeHash(Encoding.UTF8.GetBytes(password), Encoding.UTF8.GetBytes(newSalt));
 
-                if (um.GetUser(login.email, login.password) != null)
+                if (um.GetUser(logIn.email, logIn.password) != null)
                 {
-                    User user = um.GetUser(login.email, login.password);
+                    User user = um.GetUser(logIn.email, logIn.password);
 
                     List<Claim> claims = new List<Claim>();
-                    claims.Add(new Claim(ClaimTypes.Email, user.email));
-                    claims.Add(new Claim("email", user.email));
-                    claims.Add(new Claim(ClaimTypes.Name, user.fName));
-                    claims.Add(new Claim("firstName", user.fName));
-                    claims.Add(new Claim(ClaimTypes.Surname, user.lName));
-                    claims.Add(new Claim("lastName", user.lName));
-                    claims.Add(new Claim(ClaimTypes.StreetAddress, user.adress));
-                    claims.Add(new Claim("adress", user.adress));
-                    claims.Add(new Claim(ClaimTypes.Role, user.role));
-                    claims.Add(new Claim("role", user.role));
+                    claims.Add(new Claim(ClaimTypes.Email, user.Email));
+                    claims.Add(new Claim("email", user.Email));
+                    claims.Add(new Claim(ClaimTypes.Name, user.FName));
+                    claims.Add(new Claim("firstName", user.FName));
+                    claims.Add(new Claim(ClaimTypes.Surname, user.LName));
+                    claims.Add(new Claim("lastName", user.LName));
+                    claims.Add(new Claim(ClaimTypes.StreetAddress, user.Adress));
+                    claims.Add(new Claim("adress", user.Adress));
+                    claims.Add(new Claim(ClaimTypes.Role, user.Role));
+                    claims.Add(new Claim("role", user.Role));
 
 
 

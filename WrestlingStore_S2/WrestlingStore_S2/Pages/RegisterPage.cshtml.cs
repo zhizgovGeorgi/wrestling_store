@@ -8,15 +8,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text;
 using Modules;
 using LogicLayer;
+using DAL;
 
 namespace MyWebStore.Pages
 {
     public class RegisterPageModel : PageModel
     {
         [BindProperty]
-        public Register register { get; set; }
+        public UserRegister User { get; set; }
 
-        public UserManager um = new UserManager();
+
+        public UserManager um = new UserManager(new UserData());
 
         public void OnGet()
         {
@@ -28,9 +30,9 @@ namespace MyWebStore.Pages
 
             if (ModelState.IsValid)
             {
+                User user = new User(User.fName, User.lName, User.email, User.adress, User.password, "User");
 
-
-                um.AddUser(register.fName, register.lName, register.email, register.adress, register.password);
+                um.AddUser(user);
                 return RedirectToPage("LogIn");
 
             }

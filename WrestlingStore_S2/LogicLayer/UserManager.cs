@@ -1,4 +1,4 @@
-﻿using DAL;
+﻿
 using Modules;
 using System;
 using System.Collections.Generic;
@@ -6,15 +6,15 @@ using System.Text;
 
 namespace LogicLayer
 {
-    public class UserManager
+    public class UserManager 
     {
-        private UserData ud;
         private List<User> users;
+        IUserDataManagement<User> userDataManagement;
 
-        public UserManager()
+        public UserManager(IUserDataManagement<User> userDataManagement)
         {
-            ud = new UserData();
-            users = ud.GetAllUsers() ;
+            this.userDataManagement = userDataManagement;
+            users = this.userDataManagement.GetAllUsers();
         }
 
 
@@ -22,8 +22,8 @@ namespace LogicLayer
         {
             foreach (User u in users)
             {
-                    User user = ud.ReadUser(email, password);
-                if (user.email == u.email && user.password == u.password)
+                User user = userDataManagement.ReadUser(email, password);
+                if (user.Email == u.Email && user.Password == u.Password)
                 {
                     return user;
                 }
@@ -31,51 +31,32 @@ namespace LogicLayer
             return null;
         }
 
-        public void AddUser(string FName, string LName, string Email, string Adress, string Password)
+        public void AddUser(User user)
         {
-            ud.AddUser(FName, LName, Email, Adress, Password);
-            User user = new User()
-            {
-                fName = FName,
-                lName = LName,
-                email = Email,
-                adress = Adress,
-                password = Password
-            };
+            userDataManagement.AddUser(user);
             users.Add(user);
 
         }
 
-        public void AddAdmin( string FName, string LName, string Email, string Adress, string Password)
+        public void AddAdmin(User user)
         {
-            ud.AddAdministrator(FName, LName, Email, Adress, Password);
-            User user = new User()
-            {
-                fName = FName,
-                lName = LName,
-                email = Email,
-                adress = Adress,
-                password = Password
-            };
+            userDataManagement.AddAdministrator(user);
             users.Add(user);
         }
 
         public void RemoveUser(User u)
         {
-            foreach (User user in users)
-            {
-                
-                    users.Remove(u);
-                    ud.DeleteUser(u);
-                    return;
-                
-            }
-
+            users.Remove(u);
+            userDataManagement.DeleteUser(u);
+            return;
+        }
+        public User GetUser(string email)
+        {
+            return users.Find(x => x.Email == email);
         }
 
         public List<User> GetAllUsers()
         {
-            
             return users;
         }
     }

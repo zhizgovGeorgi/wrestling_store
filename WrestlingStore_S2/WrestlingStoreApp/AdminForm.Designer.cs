@@ -67,9 +67,19 @@
             this.tbID = new System.Windows.Forms.TextBox();
             this.lbUsers = new System.Windows.Forms.ListBox();
             this.tpOrders = new System.Windows.Forms.TabPage();
+            this.btnDecline = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnShow = new System.Windows.Forms.Button();
+            this.rbDeclined = new System.Windows.Forms.RadioButton();
+            this.lblOrders = new System.Windows.Forms.Label();
+            this.rbConfirmed = new System.Windows.Forms.RadioButton();
+            this.rbCoplete = new System.Windows.Forms.RadioButton();
+            this.rbAll = new System.Windows.Forms.RadioButton();
+            this.lbOrders = new System.Windows.Forms.ListBox();
             this.tcAdministrator.SuspendLayout();
             this.tpProducts.SuspendLayout();
             this.tpUsers.SuspendLayout();
+            this.tpOrders.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcAdministrator
@@ -448,11 +458,113 @@
             // 
             // tpOrders
             // 
+            this.tpOrders.Controls.Add(this.btnDecline);
+            this.tpOrders.Controls.Add(this.btnConfirm);
+            this.tpOrders.Controls.Add(this.btnShow);
+            this.tpOrders.Controls.Add(this.rbDeclined);
+            this.tpOrders.Controls.Add(this.lblOrders);
+            this.tpOrders.Controls.Add(this.rbConfirmed);
+            this.tpOrders.Controls.Add(this.rbCoplete);
+            this.tpOrders.Controls.Add(this.rbAll);
+            this.tpOrders.Controls.Add(this.lbOrders);
             this.tpOrders.Location = new System.Drawing.Point(4, 24);
             this.tpOrders.Name = "tpOrders";
             this.tpOrders.Size = new System.Drawing.Size(792, 422);
             this.tpOrders.TabIndex = 2;
             this.tpOrders.Text = "Orders";
+            // 
+            // btnDecline
+            // 
+            this.btnDecline.Location = new System.Drawing.Point(581, 359);
+            this.btnDecline.Name = "btnDecline";
+            this.btnDecline.Size = new System.Drawing.Size(75, 23);
+            this.btnDecline.TabIndex = 8;
+            this.btnDecline.Text = "Decline";
+            this.btnDecline.UseVisualStyleBackColor = true;
+            this.btnDecline.Click += new System.EventHandler(this.btnDecline_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(347, 359);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.TabIndex = 7;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(98, 359);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(75, 23);
+            this.btnShow.TabIndex = 6;
+            this.btnShow.Text = "Show";
+            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click_1);
+            // 
+            // rbDeclined
+            // 
+            this.rbDeclined.AutoSize = true;
+            this.rbDeclined.Location = new System.Drawing.Point(581, 330);
+            this.rbDeclined.Name = "rbDeclined";
+            this.rbDeclined.Size = new System.Drawing.Size(71, 19);
+            this.rbDeclined.TabIndex = 5;
+            this.rbDeclined.TabStop = true;
+            this.rbDeclined.Text = "Declined";
+            this.rbDeclined.UseVisualStyleBackColor = true;
+            // 
+            // lblOrders
+            // 
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblOrders.Location = new System.Drawing.Point(347, 19);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(49, 17);
+            this.lblOrders.TabIndex = 4;
+            this.lblOrders.Text = "Orders";
+            // 
+            // rbConfirmed
+            // 
+            this.rbConfirmed.AutoSize = true;
+            this.rbConfirmed.Location = new System.Drawing.Point(421, 330);
+            this.rbConfirmed.Name = "rbConfirmed";
+            this.rbConfirmed.Size = new System.Drawing.Size(82, 19);
+            this.rbConfirmed.TabIndex = 3;
+            this.rbConfirmed.TabStop = true;
+            this.rbConfirmed.Text = "Confirmed";
+            this.rbConfirmed.UseVisualStyleBackColor = true;
+            // 
+            // rbCoplete
+            // 
+            this.rbCoplete.AutoSize = true;
+            this.rbCoplete.Location = new System.Drawing.Point(240, 330);
+            this.rbCoplete.Name = "rbCoplete";
+            this.rbCoplete.Size = new System.Drawing.Size(77, 19);
+            this.rbCoplete.TabIndex = 2;
+            this.rbCoplete.TabStop = true;
+            this.rbCoplete.Text = "Complete";
+            this.rbCoplete.UseVisualStyleBackColor = true;
+            // 
+            // rbAll
+            // 
+            this.rbAll.AutoSize = true;
+            this.rbAll.Location = new System.Drawing.Point(117, 330);
+            this.rbAll.Name = "rbAll";
+            this.rbAll.Size = new System.Drawing.Size(39, 19);
+            this.rbAll.TabIndex = 1;
+            this.rbAll.TabStop = true;
+            this.rbAll.Text = "All";
+            this.rbAll.UseVisualStyleBackColor = true;
+            // 
+            // lbOrders
+            // 
+            this.lbOrders.FormattingEnabled = true;
+            this.lbOrders.ItemHeight = 15;
+            this.lbOrders.Location = new System.Drawing.Point(70, 51);
+            this.lbOrders.Name = "lbOrders";
+            this.lbOrders.Size = new System.Drawing.Size(649, 259);
+            this.lbOrders.TabIndex = 0;
             // 
             // AdminForm
             // 
@@ -467,6 +579,8 @@
             this.tpProducts.PerformLayout();
             this.tpUsers.ResumeLayout(false);
             this.tpUsers.PerformLayout();
+            this.tpOrders.ResumeLayout(false);
+            this.tpOrders.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -513,6 +627,15 @@
         private System.Windows.Forms.Label lblFName;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TabPage tpOrders;
+        private System.Windows.Forms.ListBox lbOrders;
+        private System.Windows.Forms.RadioButton rbDeclined;
+        private System.Windows.Forms.Label lblOrders;
+        private System.Windows.Forms.RadioButton rbConfirmed;
+        private System.Windows.Forms.RadioButton rbCoplete;
+        private System.Windows.Forms.RadioButton rbAll;
+        private System.Windows.Forms.Button btnDecline;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnShow;
     }
 }
 

@@ -4,11 +4,8 @@ using System.Text;
 
 namespace Modules
 {
-    public class Administrator : User
+    public enum Status
     {
-        public Administrator()
-        {
-
-        }
+        Pending, Complete, Declined, Confirmed
     }
 }

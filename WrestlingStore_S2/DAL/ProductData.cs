@@ -7,7 +7,7 @@ using System.Text;
 
 namespace DAL
 {
-    public class ProductData
+    public class ProductData : IProductDataManagement<Product>
     {
         private ConnectionDB connection;
 
@@ -37,40 +37,19 @@ namespace DAL
 
                     if (prodReader.GetString("prod_category") == "Wrestling Shoes" )
                     {
-                        product = new WrestlingShoes()
-                        {
-                            prod_id = prodReader.GetInt32("prod_id"),
-                            prodName = prodReader.GetString("prod_Name"),
-                            prodCategory = prodReader.GetString("prod_category"),
-                            prodPrice = prodReader.GetDouble("prod_price"),
-                            prodImg = prodReader.GetString("prod_image"),
-                            KindOfActivity = prodReader.GetString("prod_kind")
-                        };
+                        product = new WrestlingShoes(prodReader.GetInt32("prod_id"), prodReader.GetString("prod_Name"), prodReader.GetString("prod_category"), prodReader.GetDouble("prod_price"), prodReader.GetString("prod_image"), prodReader.GetString("prod_kind"));
                         products.Add(product);
                     }
                     else if (prodReader.GetString("prod_category") == "Wrestling Clothes")
                     {
-                        product = new WrestlingClothes()
-                        {
-                            prod_id = prodReader.GetInt32("prod_id"),
-                            prodName = prodReader.GetString("prod_Name"),
-                            prodCategory = prodReader.GetString("prod_category"),
-                            prodPrice = prodReader.GetDouble("prod_price"),
-                            prodImg = prodReader.GetString("prod_image"),
-                            Material = prodReader.GetString("prod_material")
-                        };
+                        product = new WrestlingClothes(prodReader.GetInt32("prod_id"), prodReader.GetString("prod_Name"), prodReader.GetString("prod_category"), prodReader.GetDouble("prod_price"), prodReader.GetString("prod_image"), prodReader.GetString("prod_material")); 
+                       
                         products.Add(product);
                     }
                     else if (prodReader.GetString("prod_category") == "Wrestling Accessories")
                     {
-                        product = new WrestlingAccessories()
-                        {
-                            prod_id = prodReader.GetInt32("prod_id"),
-                            prodName = prodReader.GetString("prod_Name"),
-                            prodCategory = prodReader.GetString("prod_category"),
-                            prodPrice = prodReader.GetDouble("prod_price"),
-                            prodImg = prodReader.GetString("prod_image")
-                        };
+                        product = new WrestlingAccessories(prodReader.GetInt32("prod_id"), prodReader.GetString("prod_Name"), prodReader.GetString("prod_category"), prodReader.GetDouble("prod_price"), prodReader.GetString("prod_image"));
+
                         products.Add(product);
                     }
 
@@ -94,173 +73,9 @@ namespace DAL
             }
         }
 
-        public void AddWrestlingAccessories(string prod_name, string prod_category, double prod_price, string prod_image)
+        public Product GetProduct(int prod_id)
         {
-            string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image);";
-            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
-
-            command.Parameters.AddWithValue("@prod_name", prod_name);
-            command.Parameters.AddWithValue("@prod_category", prod_category);
-            command.Parameters.AddWithValue("@prod_price", prod_price);
-            command.Parameters.AddWithValue("@prod_image", prod_image);
-            try
-            {
-                int n;
-
-                connection.GetConnection().Open();
-
-                n = command.ExecuteNonQuery();
-                Product wa = new WrestlingAccessories()
-                {
-                    prodName = prod_name,
-                    prodCategory = prod_category,
-                    prodPrice = prod_price,
-                    prodImg = prod_image
-
-                };
-
-
-            }
-            catch (MySqlException ex)
-            {
-                throw ex;
-
-            }
-            finally
-            {
-                connection.GetConnection().Close();
-            }
-        }
-
-        public void AddWrestlingShoes(string prod_name, string prod_category, double prod_price, string prod_image, string prod_kind)
-        {
-            string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_kind) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_kind);";
-            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
-
-            command.Parameters.AddWithValue("@prod_name", prod_name);
-            command.Parameters.AddWithValue("@prod_category", prod_category);
-            command.Parameters.AddWithValue("@prod_price", prod_price);
-            command.Parameters.AddWithValue("@prod_image", prod_image);
-            command.Parameters.AddWithValue("@prod_kind", prod_kind);
-            try
-            {
-                int n;
-
-                connection.GetConnection().Open();
-
-                n = command.ExecuteNonQuery();
-                Product ws = new WrestlingShoes()
-                {
-                    prodName = prod_name,
-                    prodCategory = prod_category,
-                    prodPrice = prod_price,
-                    prodImg = prod_image,
-                    KindOfActivity = prod_kind
-
-                };
-
-
-            }
-            catch (MySqlException ex)
-            {
-                throw ex;
-
-            }
-            finally
-            {
-                connection.GetConnection().Close();
-            }
-        }
-
-        public void AddWrestlingClothes(string prod_name, string prod_category, double prod_price, string prod_image, string prod_material)
-        {
-            string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_material) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_material);";
-            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
-
-            command.Parameters.AddWithValue("@prod_name", prod_name);
-            command.Parameters.AddWithValue("@prod_category", prod_category);
-            command.Parameters.AddWithValue("@prod_price", prod_price);
-            command.Parameters.AddWithValue("@prod_image", prod_image);
-            command.Parameters.AddWithValue("@prod_material", prod_material);
-            try
-            {
-                int n;
-
-                connection.GetConnection().Open();
-
-                n = command.ExecuteNonQuery();
-                Product wc = new WrestlingClothes()
-                {
-                    prodName = prod_name,
-                    prodCategory = prod_category,
-                    prodPrice = prod_price,
-                    prodImg = prod_image,
-                    Material = prod_material
-
-                };
-
-
-            }
-            catch (MySqlException ex)
-            {
-                throw ex;
-
-            }
-            finally
-            {
-                connection.GetConnection().Close();
-            }
-        }
-
-        //public Product GetProduct(string prod_name)
-        //{
-        //    string sqlStatement = "SELECT * FROM wad_product WHERE prod_name = @prod_name";
-        //    MySqlCommand command = new MySqlCommand(sqlStatement, conn);
-
-        //    try
-        //    {
-        //        MySqlDataReader databaseReader;
-
-        //        conn.Open();
-
-        //        command.Parameters.AddWithValue("@prod_name", prod_name);
-
-        //        databaseReader = command.ExecuteReader();
-
-        //        DataAccessLayer.DTOs.ProductDTO product;
-
-        //        while (databaseReader.Read())
-        //        {
-
-
-
-        //            product = new DataAccessLayer.DTOs.ProductDTO()
-        //            {
-        //                prodId = databaseReader.GetInt32("prod_id"),
-        //                prodName = databaseReader.GetString("prod_name"),
-        //                prodCategory = databaseReader.GetString("prod_category"),
-        //                prodPrice = databaseReader.GetDouble("prod_price"),
-        //                prodImg = databaseReader.GetString("prod_image")
-        //            };
-        //            //user.ID = id;
-        //            return product;
-        //        }
-
-        //        //return (databaseReader.Read());
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //    return null;
-        //}
-        public void DeleteProduct(Product product)
-        {
-            string sqlStatement = "DELETE FROM wad_product WHERE prod_name = @prod_name";
+            string sqlStatement = "SELECT * FROM wad_products where prod_id = @prod_id";
             MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
             try
@@ -269,7 +84,242 @@ namespace DAL
 
                 connection.GetConnection().Open();
 
-                command.Parameters.AddWithValue("@prod_name", product.prodName);
+                command.Parameters.AddWithValue("@prod_id", prod_id);
+
+                databaseReader = command.ExecuteReader();
+
+                Product product;
+
+                while (databaseReader.Read())
+                {
+                    if (databaseReader.GetString("prod_category") == "Wrestling Shoes")
+                    {
+                        product = new WrestlingShoes(databaseReader.GetInt32("prod_id"), databaseReader.GetString("prod_Name"), databaseReader.GetString("prod_category"), databaseReader.GetDouble("prod_price"), databaseReader.GetString("prod_image"), databaseReader.GetString("prod_kind"));                      
+                        return product;
+                    }
+                    else if (databaseReader.GetString("prod_category") == "Wrestling Clothes")
+                    {
+                        product = new WrestlingClothes(databaseReader.GetInt32("prod_id"), databaseReader.GetString("prod_Name"), databaseReader.GetString("prod_category"), databaseReader.GetDouble("prod_price"), databaseReader.GetString("prod_image"), databaseReader.GetString("prod_material"));
+                        return product;
+                    }
+                    else if (databaseReader.GetString("prod_category") == "Wrestling Accessories")
+                    {
+                        product = new WrestlingAccessories(databaseReader.GetInt32("prod_id"), databaseReader.GetString("prod_Name"), databaseReader.GetString("prod_category"), databaseReader.GetDouble("prod_price"), databaseReader.GetString("prod_image"));
+                        return product;
+                    }
+
+
+                    
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.GetConnection().Close();
+            }
+            return null;
+        }
+
+        //public void AddWrestlingAccessories(Product p)
+        //{
+        //    string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image);";
+        //    MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+        //    command.Parameters.AddWithValue("@prod_name", p.ProdName);
+        //    command.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+        //    command.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+        //    command.Parameters.AddWithValue("@prod_image", p.ProdImg);
+        //    try
+        //    {
+        //        int n;
+
+        //        connection.GetConnection().Open();
+
+        //        n = command.ExecuteNonQuery();
+
+
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        throw ex;
+
+        //    }
+        //    finally
+        //    {
+        //        connection.GetConnection().Close();
+        //    }
+        //}
+
+        //public void AddWrestlingShoes(Product p)
+        //{
+        //    string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_kind) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_kind);";
+        //    MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+        //    command.Parameters.AddWithValue("@prod_name", p.ProdName);
+        //    command.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+        //    command.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+        //    command.Parameters.AddWithValue("@prod_image", p.ProdImg);
+        //    command.Parameters.AddWithValue("@prod_kind", ((WrestlingShoes)p).KindOfActivity);
+        //    try
+        //    {
+        //        int n;
+
+        //        connection.GetConnection().Open();
+
+        //        n = command.ExecuteNonQuery();
+
+
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        throw ex;
+
+        //    }
+        //    finally
+        //    {
+        //        connection.GetConnection().Close();
+        //    }
+        //}
+
+        //public void AddWrestlingClothes(WrestlingClothes p)
+        //{
+        //    string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_material) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_material);";
+        //    MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+        //    command.Parameters.AddWithValue("@prod_name", p.ProdName);
+        //    command.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+        //    command.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+        //    command.Parameters.AddWithValue("@prod_image", p.ProdImg);
+        //    command.Parameters.AddWithValue("@prod_material", p.Material);
+        //    try
+        //    {
+        //        int n;
+
+        //        connection.GetConnection().Open();
+
+        //        n = command.ExecuteNonQuery();
+
+
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        throw ex;
+
+        //    }
+        //    finally
+        //    {
+        //        connection.GetConnection().Close();
+        //    }
+        //}
+
+        public void AddProduct(Product p)
+        {
+            if (p is WrestlingClothes)
+            {
+                string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_material) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_material),;";
+                MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+                command.Parameters.AddWithValue("@prod_name", p.ProdName);
+                command.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+                command.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+                command.Parameters.AddWithValue("@prod_image", p.ProdImg);
+                command.Parameters.AddWithValue("@prod_material", ((WrestlingClothes)p).Material);
+                try
+                {
+                    int n;
+
+                    connection.GetConnection().Open();
+
+                    n = command.ExecuteNonQuery();
+
+
+                }
+                catch (MySqlException ex)
+                {
+                    throw ex;
+
+                }
+                finally
+                {
+                    connection.GetConnection().Close();
+                }
+            }
+            else if (p is WrestlingShoes)
+            {
+                string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_kind) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_kind);";
+                MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+                command.Parameters.AddWithValue("@prod_name", p.ProdName);
+                command.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+                command.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+                command.Parameters.AddWithValue("@prod_image", p.ProdImg);
+                command.Parameters.AddWithValue("@prod_kind", ((WrestlingShoes)p).KindOfActivity);
+                try
+                {
+                    int n;
+
+                    connection.GetConnection().Open();
+
+                    n = command.ExecuteNonQuery();
+
+
+                }
+                catch (MySqlException ex)
+                {
+                    throw ex;
+
+                }
+                finally
+                {
+                    connection.GetConnection().Close();
+                }
+            }
+            else if (p is WrestlingAccessories)
+            {
+                string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image);";
+                MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+                command.Parameters.AddWithValue("@prod_name", p.ProdName);
+                command.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+                command.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+                command.Parameters.AddWithValue("@prod_image", p.ProdImg);
+                try
+                {
+                    int n;
+
+                    connection.GetConnection().Open();
+
+                    n = command.ExecuteNonQuery();
+
+
+                }
+                catch (MySqlException ex)
+                {
+                    throw ex;
+
+                }
+                finally
+                {
+                    connection.GetConnection().Close();
+                }
+            }
+        }
+        public void DeleteProduct(Product product)
+        {
+            string sqlStatement = "DELETE FROM wad_products WHERE prod_name = @prod_name";
+            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+
+            try
+            {
+                MySqlDataReader databaseReader;
+
+                connection.GetConnection().Open();
+
+                command.Parameters.AddWithValue("@prod_name", product.ProdName);
 
                 databaseReader = command.ExecuteReader();
 
@@ -317,6 +367,11 @@ namespace DAL
                     connection.GetConnection().Close();
                 }
             }
+        }
+
+        public Product GetProduct(string prod_Name)
+        {
+            throw new NotImplementedException();
         }
     }
 }
