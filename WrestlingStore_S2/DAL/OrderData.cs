@@ -202,6 +202,36 @@ namespace DAL
             }
         }
 
+        public void UpdateCurrentOrder(Order o, int quantity)
+        {
+            string sql = "UPDATE wad_order SET quantity = @quantity WHERE order_id = @order_id";
+            MySqlCommand command = new MySqlCommand(sql, connection.GetConnection());
+
+            command.Parameters.AddWithValue("@order_id", o.OrderId);
+            command.Parameters.AddWithValue("@quantity", quantity  );
+            try
+            {
+
+                connection.GetConnection().Open();
+
+                command.ExecuteNonQuery();
+
+
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                if (connection.GetConnection() != null && connection.GetConnection().State == ConnectionState.Open)
+                {
+                    connection.GetConnection().Close();
+                }
+            }
+        }
+
 
 
 

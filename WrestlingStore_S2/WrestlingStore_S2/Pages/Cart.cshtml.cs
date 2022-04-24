@@ -22,16 +22,18 @@ namespace WrestlingStore_S2.Pages
         public void OnPost(int id)
         {
             om.RemoveCartItem(id);
-
         }
 
         public void OnPostCompleteOrder()
         {
-            foreach (Order o in om.ShowOrderItems(um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value)))
+            if (ModelState.IsValid)
             {
-                if (o.Status == Status.Pending)
+                foreach (Order o in om.ShowOrderItems(um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value)))
                 {
-                    om.EditOrder(o, Status.Complete);
+                    if (o.Status == Status.Pending)
+                    {
+                        om.EditOrder(o, Status.Complete);
+                    }
                 }
             }
         }

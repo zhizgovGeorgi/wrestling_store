@@ -86,7 +86,7 @@ namespace Modules
 
         public override string ToString()
         {
-            return $"Order number: {OrderId} for - {User.Email}  with {Product.ProdName} {Quantity} x {Product.ProdPrice} = {TotalPrice} [{Status}]";
+            return $"Order number: {OrderId} for - {User.Email}  with {Product.ProdName} {Quantity} x {Product.ProdPrice} = {Math.Round(TotalPrice, 2)} [{Status}]";
         }
 
     }

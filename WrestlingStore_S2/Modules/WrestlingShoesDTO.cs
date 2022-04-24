@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Modules
 {
-    public class ProductDTO
+    public  class WrestlingShoesDTO
     {
         [Required(ErrorMessage = "Enter product's name!")]
         public string ProdName { get; set; }
@@ -21,22 +21,5 @@ namespace Modules
 
         [Required(ErrorMessage = "Enter kind!")]
         public string ProdKind { get; set; }
-
-        [Required(ErrorMessage = "Enter material!")]
-        public string ProdMaterial { get; set; }
-
-
-
-        //public ProductDTO(string prodName, string prodCategory, double prodPrice, string prodImg)
-        //{
-        //    ProdName = prodName;
-        //    ProdCategory = prodCategory;
-        //    ProdPrice = prodPrice;
-        //    ProdImg = prodImg;
-        //}
-        //public ProductDTO()
-        //{
-
-        //}
     }
 }

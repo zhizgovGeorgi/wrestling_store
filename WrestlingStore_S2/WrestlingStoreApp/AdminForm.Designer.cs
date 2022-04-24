@@ -30,6 +30,7 @@
         {
             this.tcAdministrator = new System.Windows.Forms.TabControl();
             this.tpProducts = new System.Windows.Forms.TabPage();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.rbWrestlingAccessories = new System.Windows.Forms.RadioButton();
             this.rbWrestlingClothes = new System.Windows.Forms.RadioButton();
             this.rbWrestlingShoes = new System.Windows.Forms.RadioButton();
@@ -96,6 +97,7 @@
             // 
             // tpProducts
             // 
+            this.tpProducts.Controls.Add(this.btnEdit);
             this.tpProducts.Controls.Add(this.rbWrestlingAccessories);
             this.tpProducts.Controls.Add(this.rbWrestlingClothes);
             this.tpProducts.Controls.Add(this.rbWrestlingShoes);
@@ -122,6 +124,16 @@
             this.tpProducts.TabIndex = 0;
             this.tpProducts.Text = "Products";
             this.tpProducts.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(676, 309);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(85, 39);
+            this.btnEdit.TabIndex = 8;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // rbWrestlingAccessories
             // 
@@ -222,6 +234,7 @@
             // 
             // tbProdID
             // 
+            this.tbProdID.Enabled = false;
             this.tbProdID.Location = new System.Drawing.Point(95, 54);
             this.tbProdID.Name = "tbProdID";
             this.tbProdID.Size = new System.Drawing.Size(167, 23);
@@ -263,6 +276,7 @@
             this.lbProducts.Name = "lbProducts";
             this.lbProducts.Size = new System.Drawing.Size(351, 229);
             this.lbProducts.TabIndex = 2;
+            this.lbProducts.SelectedIndexChanged += new System.EventHandler(this.lbProducts_SelectedIndexChanged);
             // 
             // btnAddProd
             // 
@@ -276,7 +290,7 @@
             // 
             // btnRemoveProd
             // 
-            this.btnRemoveProd.Location = new System.Drawing.Point(495, 309);
+            this.btnRemoveProd.Location = new System.Drawing.Point(440, 309);
             this.btnRemoveProd.Name = "btnRemoveProd";
             this.btnRemoveProd.Size = new System.Drawing.Size(85, 39);
             this.btnRemoveProd.TabIndex = 3;
@@ -286,7 +300,7 @@
             // 
             // btnShowProducts
             // 
-            this.btnShowProducts.Location = new System.Drawing.Point(641, 309);
+            this.btnShowProducts.Location = new System.Drawing.Point(549, 309);
             this.btnShowProducts.Name = "btnShowProducts";
             this.btnShowProducts.Size = new System.Drawing.Size(85, 39);
             this.btnShowProducts.TabIndex = 3;
@@ -442,6 +456,7 @@
             // 
             // tbID
             // 
+            this.tbID.Enabled = false;
             this.tbID.Location = new System.Drawing.Point(92, 42);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(143, 23);
@@ -455,6 +470,7 @@
             this.lbUsers.Name = "lbUsers";
             this.lbUsers.Size = new System.Drawing.Size(400, 199);
             this.lbUsers.TabIndex = 0;
+            this.lbUsers.SelectedIndexChanged += new System.EventHandler(this.lbUsers_SelectedIndexChanged);
             // 
             // tpOrders
             // 
@@ -573,7 +589,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tcAdministrator);
             this.Name = "AdminForm";
-            this.Text = "Form1";
+            this.Text = "Wrestling Store";
             this.tcAdministrator.ResumeLayout(false);
             this.tpProducts.ResumeLayout(false);
             this.tpProducts.PerformLayout();
@@ -599,7 +615,6 @@
         private System.Windows.Forms.Button btnRemoveProd;
         private System.Windows.Forms.Button btnShowProducts;
         private System.Windows.Forms.TabPage tpUsers;
-        private System.Windows.Forms.TextBox tbProd;
         private System.Windows.Forms.Label lblProdImg;
         private System.Windows.Forms.Label lblProdPrice;
         private System.Windows.Forms.Label lblProdCategory;
@@ -636,6 +651,7 @@
         private System.Windows.Forms.Button btnDecline;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnEdit;
     }
 }
 

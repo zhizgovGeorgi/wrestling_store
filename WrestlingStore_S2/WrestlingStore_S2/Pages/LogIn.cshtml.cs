@@ -38,33 +38,26 @@ namespace WrestlingStore_S2.Pages
                 //var newSalt = "njkfbaijsa";
                 //var hashedPassword = hashing.ComputeHash(Encoding.UTF8.GetBytes(password), Encoding.UTF8.GetBytes(newSalt));
 
-                if (um.GetUser(logIn.email, logIn.password) != null)
+                if (um.ReadUser(logIn.email, logIn.password) != null)
                 {
-                    User user = um.GetUser(logIn.email, logIn.password);
+                    User user = um.ReadUser(logIn.email, logIn.password);
 
                     List<Claim> claims = new List<Claim>();
                     claims.Add(new Claim(ClaimTypes.Email, user.Email));
-                    claims.Add(new Claim("email", user.Email));
                     claims.Add(new Claim(ClaimTypes.Name, user.FName));
-                    claims.Add(new Claim("firstName", user.FName));
                     claims.Add(new Claim(ClaimTypes.Surname, user.LName));
-                    claims.Add(new Claim("lastName", user.LName));
                     claims.Add(new Claim(ClaimTypes.StreetAddress, user.Adress));
-                    claims.Add(new Claim("adress", user.Adress));
                     claims.Add(new Claim(ClaimTypes.Role, user.Role));
-                    claims.Add(new Claim("role", user.Role));
 
 
 
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    HttpContext.SignInAsync(
-CookieAuthenticationDefaults.AuthenticationScheme,
-new ClaimsPrincipal(claimsIdentity),
-new AuthenticationProperties
-{
-    IsPersistent = true,
-    ExpiresUtc = DateTime.UtcNow.AddMinutes(20)
-});
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity),
+                        new AuthenticationProperties
+                        {
+                            IsPersistent = true,
+                            ExpiresUtc = DateTime.UtcNow.AddMinutes(20)
+                        });
 
 
                     return RedirectToPage("Index");

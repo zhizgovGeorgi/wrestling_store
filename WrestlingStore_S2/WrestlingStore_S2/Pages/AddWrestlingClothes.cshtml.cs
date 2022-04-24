@@ -15,7 +15,7 @@ namespace WrestlingStore_S2.Pages
      
 
         [BindProperty]
-        public ProductDTO wc { get; set; }
+        public WrestlingClothesDTO wc { get; set; }
 
   
 
@@ -34,7 +34,7 @@ namespace WrestlingStore_S2.Pages
                 pm.AddProduct(product);
 
 
-                return RedirectToPage("AddWrestlingClothes");
+                return RedirectToPage("WrestlingClothes");
 
             }
             return Page();

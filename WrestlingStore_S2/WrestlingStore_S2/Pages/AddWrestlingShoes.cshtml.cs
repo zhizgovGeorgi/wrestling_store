@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Modules;
 using DAL;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WrestlingStore_S2.Pages
 {
     public class AddWrestlingShoesModel : PageModel
     {
         [BindProperty]
-        public ProductDTO ws { get; set; }
+        public WrestlingShoesDTO ws { get; set; }
 
         public ProductManager pm = new ProductManager(new ProductData());
 
@@ -24,12 +25,12 @@ namespace WrestlingStore_S2.Pages
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 Product product = new WrestlingShoes(ws.ProdName, ws.ProdCategory, ws.ProdPrice, ws.ProdImg, ws.ProdKind);
                 pm.AddProduct(product);
 
-                return RedirectToPage("AddWrestlingShoes");
+                return RedirectToPage("WrestlingShoes");
 
             }
             return Page();

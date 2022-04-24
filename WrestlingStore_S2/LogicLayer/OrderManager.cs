@@ -18,6 +18,21 @@ namespace LogicLayer
 
         public void AddOrder(Order o)
         {
+            //if (ShowOrderItems(o.User).Contains(o))
+            //{
+            //    orderDataManagement.UpdateCurrentOrder(o, o.Quantity );
+            //}
+            int quantity = 0;
+            foreach (Order order in ShowOrderItems(o.User))
+            {
+                if (order.Product.Prod_id == o.Product.Prod_id && order.Status == Status.Pending && o.Size == order.Size)
+                {
+                    quantity = order.Quantity;
+                    quantity += o.Quantity;
+                    orderDataManagement.UpdateCurrentOrder(order, quantity);
+                    return;
+                }
+            }
             orderDataManagement.AddOrder(o);
             orderItems.Add(o);
         }
@@ -55,5 +70,5 @@ namespace LogicLayer
             orderDataManagement.EditOrder(o, status);
         }
     }
-    
+
 }

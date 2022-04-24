@@ -8,7 +8,7 @@ namespace Modules
     {
         List<Product> ShowAllProducts();
 
-        Product GetProduct(string prod_Name);
+        Product GetProduct(int prod_id);
 
         void AddProduct(Product product);
 
@@ -17,6 +17,6 @@ namespace Modules
         //void AddWrestlingClothes(string prod_name, string prod_category, double prod_price, string prod_image, string prod_material);
 
         void DeleteProduct(Product product);
-        void EditProduct(int prod_id, string prod_name, string prod_category, double prod_price, string prod_image);
+        void EditProduct(Product p);
     }
 }

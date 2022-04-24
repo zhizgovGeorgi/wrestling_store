@@ -13,7 +13,7 @@ namespace WrestlingStore_S2.Pages
     public class AddWrestlingAccessoriesModel : PageModel
     {
         [BindProperty]
-        public ProductDTO wa { get; set; }
+        public WrestlingAccessoriesDTO wa { get; set; }
 
 
 
@@ -32,7 +32,7 @@ namespace WrestlingStore_S2.Pages
                 pm.AddProduct(product);
 
 
-                return RedirectToPage("AddWrestlingAccessories");
+                return RedirectToPage("WrestlingAccessories");
 
             }
             return Page();

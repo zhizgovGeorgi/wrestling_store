@@ -6,7 +6,7 @@ using System.Text;
 
 namespace LogicLayer
 {
-    public class UserManager 
+    public class UserManager
     {
         private List<User> users;
         IUserDataManagement<User> userDataManagement;
@@ -18,37 +18,29 @@ namespace LogicLayer
         }
 
 
-        public User GetUser(string email, string password)
+        public User ReadUser(string email, string password)
         {
-            foreach (User u in users)
-            {
-                User user = userDataManagement.ReadUser(email, password);
-                if (user.Email == u.Email && user.Password == u.Password)
-                {
-                    return user;
-                }
-            }
-            return null;
+            return users.Find(x => x.Email == email && x.Password == password);
         }
 
         public void AddUser(User user)
         {
-            userDataManagement.AddUser(user);
-            users.Add(user);
-
+            if (users.Find(x => x.Email == user.Email) is null)
+            {
+                userDataManagement.AddUser(user);
+                users.Add(user);
+            }
         }
 
-        public void AddAdmin(User user)
-        {
-            userDataManagement.AddAdministrator(user);
-            users.Add(user);
-        }
 
         public void RemoveUser(User u)
         {
-            users.Remove(u);
-            userDataManagement.DeleteUser(u);
-            return;
+            if (users.Find(x => x.Email == u.Email) != null)
+            {
+                userDataManagement.DeleteUser(u);
+                users.Remove(u);
+
+            }
         }
         public User GetUser(string email)
         {

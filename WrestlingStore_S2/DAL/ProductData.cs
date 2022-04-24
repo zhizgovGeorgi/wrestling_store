@@ -220,7 +220,7 @@ namespace DAL
         {
             if (p is WrestlingClothes)
             {
-                string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_material) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_material),;";
+                string sqlStatement = "INSERT INTO wad_products (prod_name, prod_category, prod_price, prod_image, prod_material) VALUES (@prod_name, @prod_category,  @prod_price , @prod_image, @prod_material);";
                 MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
                 command.Parameters.AddWithValue("@prod_name", p.ProdName);
@@ -310,7 +310,7 @@ namespace DAL
         }
         public void DeleteProduct(Product product)
         {
-            string sqlStatement = "DELETE FROM wad_products WHERE prod_name = @prod_name";
+            string sqlStatement = "DELETE FROM wad_products WHERE prod_id = @prod_id";
             MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
             try
@@ -319,7 +319,7 @@ namespace DAL
 
                 connection.GetConnection().Open();
 
-                command.Parameters.AddWithValue("@prod_name", product.ProdName);
+                command.Parameters.AddWithValue("@prod_id", product.Prod_id);
 
                 databaseReader = command.ExecuteReader();
 
@@ -334,20 +334,20 @@ namespace DAL
             }
         }
 
-        public void EditProduct(int prod_id, string prod_name, string prod_category, double prod_price, string prod_image)
+        public void EditProduct(Product p)
         {
-            string sql = "UPDATE wad_product SET prod_name = @prod_name, prod_category = @prod_category, prod_price = @prod_price, prod_image = @prod_image WHERE prod_id = @prod_id;";
+            string sql = "UPDATE wad_products SET prod_name = @prod_name, prod_category = @prod_category, prod_price = @prod_price, prod_image = @prod_image WHERE prod_id = @prod_id;";
             MySqlCommand command = new MySqlCommand(sql, connection.GetConnection());
 
             try
             {
                 MySqlCommand cmd = new MySqlCommand(sql, connection.GetConnection());
 
-                cmd.Parameters.AddWithValue("@prod_name", prod_name);
-                cmd.Parameters.AddWithValue("@prod_category", prod_category);
-                cmd.Parameters.AddWithValue("@prod_price", prod_price);
-                cmd.Parameters.AddWithValue("@prod_image", prod_image);
-                cmd.Parameters.AddWithValue("@prod_id", prod_id);
+                cmd.Parameters.AddWithValue("@prod_id", p.Prod_id);
+                cmd.Parameters.AddWithValue("@prod_name", p.ProdName);
+                cmd.Parameters.AddWithValue("@prod_category", p.ProdCategory);
+                cmd.Parameters.AddWithValue("@prod_price", p.ProdPrice);
+                cmd.Parameters.AddWithValue("@prod_image", p.ProdImg);
 
                 connection.GetConnection().Open();
 
@@ -369,9 +369,6 @@ namespace DAL
             }
         }
 
-        public Product GetProduct(string prod_Name)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>8</zoom_level>
+  <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>416</x>
-      <y>1128</y>
-      <w>264</w>
-      <h>160</h>
+      <x>238</x>
+      <y>1400</y>
+      <w>231</w>
+      <h>175</h>
     </coordinates>
     <panel_attributes>User
 --
@@ -20,6 +20,9 @@
 --
 + User(id: int, fName: string, lName: string,
 email: string, adress: string. role: string)
++ User(fName: string, lName: string,
+email: string, adress: string. role: string)
++ User()
 + GetName(): string
 + ToString(): string</panel_attributes>
     <additional_attributes/>
@@ -27,10 +30,10 @@ email: string, adress: string. role: string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1624</x>
-      <y>1064</y>
-      <w>224</w>
-      <h>160</h>
+      <x>1295</x>
+      <y>1344</y>
+      <w>196</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>/Product/
 --
@@ -50,10 +53,10 @@ email: string, adress: string. role: string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1672</x>
-      <y>1216</y>
-      <w>24</w>
-      <h>24</h>
+      <x>1337</x>
+      <y>1477</y>
+      <w>21</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;10.0</additional_attributes>
@@ -61,10 +64,10 @@ email: string, adress: string. role: string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1448</x>
-      <y>1248</y>
-      <w>248</w>
-      <h>24</h>
+      <x>1141</x>
+      <y>1505</y>
+      <w>217</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;290.0;10.0</additional_attributes>
@@ -72,10 +75,10 @@ email: string, adress: string. role: string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1448</x>
-      <y>1248</y>
-      <w>24</w>
-      <h>128</h>
+      <x>1141</x>
+      <y>1505</y>
+      <w>21</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -83,10 +86,10 @@ email: string, adress: string. role: string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1672</x>
-      <y>1216</y>
-      <w>24</w>
-      <h>160</h>
+      <x>1337</x>
+      <y>1477</y>
+      <w>21</w>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
@@ -94,10 +97,10 @@ email: string, adress: string. role: string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1352</x>
-      <y>1360</y>
-      <w>232</w>
-      <h>96</h>
+      <x>1057</x>
+      <y>1603</y>
+      <w>203</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>WrestlingShoes
 --
@@ -112,10 +115,10 @@ kind: int)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1632</x>
-      <y>1360</y>
-      <w>240</w>
-      <h>96</h>
+      <x>1302</x>
+      <y>1603</y>
+      <w>210</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>WrestlingClothes
 --
@@ -130,10 +133,10 @@ material: string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1672</x>
-      <y>1248</y>
-      <w>312</w>
-      <h>24</h>
+      <x>1337</x>
+      <y>1505</y>
+      <w>273</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
@@ -141,10 +144,10 @@ material: string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1960</x>
-      <y>1248</y>
-      <w>24</w>
-      <h>128</h>
+      <x>1589</x>
+      <y>1505</y>
+      <w>21</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
@@ -152,10 +155,10 @@ material: string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1880</x>
-      <y>1360</y>
-      <w>256</w>
-      <h>72</h>
+      <x>1519</x>
+      <y>1603</y>
+      <w>224</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>WrestlingAccessories
 --
@@ -168,78 +171,77 @@ productPrice: double, colour: string)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>704</y>
-      <w>224</w>
-      <h>128</h>
+      <x>217</x>
+      <y>1029</y>
+      <w>287</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>UserManager
 --
 
 --
-+ UserManager()
++ UserManager(userDataManagement: IUserDataManagement)
 + AddUser(u: User): void
 + RemoveUser(u: User): void
-+ GetUser(email: string, password: string):
-User</panel_attributes>
++ ReadUser(email: string, password: string):
+User
++ GetUser(email: string): User
++ GetAllUsers(): List&lt;User&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>472</x>
-      <y>824</y>
-      <w>64</w>
-      <h>320</h>
+      <x>287</x>
+      <y>1141</y>
+      <w>56</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1= * -users</panel_attributes>
-    <additional_attributes>10.0;380.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;370.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1688</x>
-      <y>784</y>
-      <w>80</w>
-      <h>296</h>
+      <x>1351</x>
+      <y>1078</y>
+      <w>70</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
 m1=* -products</panel_attributes>
-    <additional_attributes>10.0;350.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;380.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1560</x>
-      <y>624</y>
-      <w>336</w>
-      <h>168</h>
+      <x>1239</x>
+      <y>959</y>
+      <w>294</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>ProductManager
 --
 
 --
-+ ProductManager()
-+ AddWrestlingShoes(prodName: string, proCategory: string, 
-prodPrice: double, prodImg: string, kind: string): void
-+ AddWrestlingClothes(prodName: string, proCategory: string, 
-prodPrice: double, prodImg: string, material: string): void
-+ AddWrestlingAccessories(prodName: string, proCategory: string, 
-prodPrice: double, prodImg: string): void
++ ProductManager(productDataManagement: IProductDataManagement)
++ AddProduct(p: Product): void
 + RemoveProduct(p: Product): void
-+ GetProduct(productName: string): Product
++ GetAllProducts(): List&lt;Product&gt;
++ GetProductByName(productName: string): Product
++ GetProduct(prod_id: int): Product
 + GetProduct(): Product[]</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>872</x>
-      <y>1144</y>
-      <w>256</w>
-      <h>168</h>
+      <x>637</x>
+      <y>1414</y>
+      <w>224</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>Order
 --
@@ -260,10 +262,10 @@ status: Status)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>672</x>
-      <y>1200</y>
-      <w>216</w>
-      <h>32</h>
+      <x>462</x>
+      <y>1463</y>
+      <w>189</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-&gt;
 m1= -user
@@ -273,43 +275,43 @@ m2= *-orders</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1120</x>
-      <y>1176</y>
-      <w>520</w>
-      <h>32</h>
+      <x>854</x>
+      <y>1442</y>
+      <w>455</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m1= -user</panel_attributes>
+m1= -product</panel_attributes>
     <additional_attributes>630.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>680</y>
-      <w>264</w>
-      <h>136</h>
+      <x>644</x>
+      <y>1008</y>
+      <w>308</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>OrderManager
 --
 
 --
-+ OrderManager()
++ OrderManager(orderDataManagement: IOrderDataManagement)
 + AddOrder(o: Order): void
-+ DeleteOrder(o: Order): void
-+ GetOrders():List&lt;Order&gt;orders
-+ DeclineOrder(o: Order): void
-+ ConfirmOrder(o: Order): void
-+ CompleteOrder(o: Order): void</panel_attributes>
++ RemoveCartItem(o: Order): void
++ ShowOrderItems(u: User): List&lt;Order&gt;
++ GetCartItems():List&lt;Order&gt;
++ GetOrder(id: int): Order
++ EditOrder(o: Order, status: Status): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>992</x>
-      <y>808</y>
-      <w>64</w>
-      <h>352</h>
+      <x>742</x>
+      <y>1120</y>
+      <w>56</w>
+      <h>308</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1= *-orders</panel_attributes>
@@ -318,10 +320,10 @@ m1= *-orders</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1624</x>
-      <y>360</y>
-      <w>216</w>
-      <h>120</h>
+      <x>1295</x>
+      <y>728</y>
+      <w>189</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 IProductDataManagement
@@ -330,16 +332,16 @@ IProductDataManagement
 + ShowAllProducts(): List&lt;Product&gt;
 + EditProduct(p: Product): void
 + DeleteProduct(p: Product): void
-+ GetProduct(p: Product): Product</panel_attributes>
++ GetProduct(prod_id: int): Product</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1720</x>
-      <y>472</y>
-      <w>32</w>
-      <h>168</h>
+      <x>1379</x>
+      <y>826</y>
+      <w>28</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -349,10 +351,10 @@ m1=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>488</x>
-      <y>424</y>
-      <w>32</w>
-      <h>296</h>
+      <x>301</x>
+      <y>784</y>
+      <w>28</w>
+      <h>259</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 
@@ -362,28 +364,28 @@ m1=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>312</y>
-      <w>216</w>
-      <h>120</h>
+      <x>217</x>
+      <y>686</y>
+      <w>189</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 IUserDataManagement
 --
 + AddUser(u: User): void
-+ ShowAllUsers(): List&lt;User&gt;
++ GetAllUsers(): List&lt;User&gt;
 + EditUser(u: User): void
 + DeleteUser(u: User): void
-+ GetUser(u: User): User</panel_attributes>
++ GetUser(id: int): User</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>1392</y>
-      <w>104</w>
-      <h>88</h>
+      <x>728</x>
+      <y>1631</y>
+      <w>91</w>
+      <h>77</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
 Status
@@ -397,52 +399,200 @@ Complete</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1000</x>
-      <y>1304</y>
-      <w>24</w>
-      <h>104</h>
+      <x>749</x>
+      <y>1554</y>
+      <w>21</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>672</x>
-      <y>1224</y>
-      <w>216</w>
-      <h>32</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;
-m2= 1</panel_attributes>
-    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>696</x>
-      <y>1248</y>
-      <w>112</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>User can have only 
-one PENDING order,
-which is the cart
-bg=white</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>752</x>
-      <y>1120</y>
-      <w>112</w>
-      <h>64</h>
+      <x>483</x>
+      <y>1379</y>
+      <w>147</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>User can have multiple orders,
 and the order has only one
 user
 bg=white</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>658</x>
+      <y>672</y>
+      <w>259</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+IOrderDataManagement
+--
++ AddOrder(o: Order): void
++ ShowOrderItems(u: User): List&lt;Order&gt;
++ GetAllOrders(): List&lt;Order&gt;
++ EditUser(u: User): void
++ DeleteOrder(o: Order): void
++ EditOrder(o: Order, status: Status): User
++ UpdateCurrentOrder(o: Order, quantity: int): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>784</y>
+      <w>28</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>189</x>
+      <y>385</y>
+      <w>287</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>UserData
+--
+conn(): ConnectionDB
+--
++ UserData()
++ AddUser(u: User): void
++ GetAllUsers(): List&lt;User&gt;
++ EditUser(u: User): void
++ DeleteUser(u: User): void
++ GetUser(id: int): User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>497</y>
+      <w>21</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;270.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>658</x>
+      <y>385</y>
+      <w>259</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>OrderData
+--
+conn(): ConnectionDB
+--
++ AddOrder(o: Order): void
++ ShowOrderItems(u: User): List&lt;Order&gt;
++ GetAllOrders(): List&lt;Order&gt;
++ EditUser(u: User): void
++ DeleteOrder(o: Order): void
++ EditOrder(o: Order, status: Status): User
++ UpdateCurrentOrder(o: Order, quantity: int): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>777</x>
+      <y>497</y>
+      <w>21</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;250.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1274</x>
+      <y>406</y>
+      <w>189</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>ProductData
+--
+conn: ConnectionDB()
+--
++ AddProduct(p: Product): void
++ ShowAllProducts(): List&lt;Product&gt;
++ EditProduct(p: Product): void
++ DeleteProduct(p: Product): void
++ GetProduct(prod_id: int): Product</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1372</x>
+      <y>504</y>
+      <w>21</w>
+      <h>238</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>0</y>
+      <w>210</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>OrderData
+--
+conn(): ConnectionDB
+--
++ GetConnection(): MySqlConnection</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>784</x>
+      <y>49</y>
+      <w>21</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;480.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>28</y>
+      <w>371</w>
+      <h>371</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>10.0;510.0;10.0;10.0;510.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>896</x>
+      <y>28</y>
+      <w>490</w>
+      <h>392</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>680.0;540.0;680.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

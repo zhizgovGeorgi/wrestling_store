@@ -7,11 +7,11 @@ namespace Modules
     public interface IUserDataManagement<User>
     {
         void AddUser(User entity);
-        void AddAdministrator(User entity);
 
-        User ReadUser(string email, string password);
 
         void DeleteUser(User entity);
+
+        User GetUser(int id); // mainly used in OrderDataClass
 
         List<User> GetAllUsers();
 

@@ -46,28 +46,32 @@
 
                 <form method="post">
                     <div class="addingToCart">
-                    <label> Quantity:</label> <span asp-validation-for="Order.Quantity"></span>
-                    <input asp-for="Order.Quantity" id="Quantity">
+                        <label> Quantity:</label> <span asp-validation-for="Order.Quantity"></span>
+                        <input asp-for="Order.Quantity" id="Quantity">
 
-                    <label> Size:</label> <span asp-validation-for="Order.Size"></span>
-                    <input asp-for="Order.Size" id="Size">
+                        <label> Size:</label> <span asp-validation-for="Order.Size"></span>
+                        <input asp-for="Order.Size" id="Size">
 
-                    <button class="btn btn-default"  asp-route-name="@p.ProdName"  asp-page-handler="AddToCart">Add to Cart</button>
+                        <button class="btn btn-default" asp-route-name="@p.ProdName" asp-page-handler="AddToCart">Add to Cart</button>
                     </div>
                 </form>
             }
-            else
+            else if (p is WrestlingAccessories)
             {
                 <form method="post">
+                    <label> Size:</label> <span asp-validation-for="Order.Size"></span>
+                    <input asp-for="Order.Size" id="Size">
                     <label> Quantity:</label> <span asp-validation-for="Order.Quantity"></span>
                     <input asp-for="Order.Quantity" id="Quantity">
-                    <button class="btn btn-default"  asp-route-name="@p.ProdName"   asp-page-handler="AddToCart2">Add to Cart</button>
+                    <button class="btn btn-default" asp-route-name="@p.ProdName" asp-page-handler="AddToCart2">Add to Cart</button>
                 </form>
             }
         }
         else if (User.IsInRole("Administrator"))
         {
-            <form method="post"><input  type="submit" value="Delete Product" /></form>
+            <form method="post">
+                <button class="btn btn-default" asp-route-id="@p.Prod_id">Delete Product</button>
+            </form>
         }
     </div>
     <img class="singleProductImage" src="@p.ProdImg" />
@@ -77,5 +81,5 @@
 
 
 @section scripts{
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }

@@ -79,43 +79,43 @@ namespace DAL
             }
         }
 
-        public User ReadUser(string email, string password)
-        {
-            string sqlStatement = "SELECT * FROM wad_user where email = @email and password = @password";
-            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
+        //public User ReadUser(string email, string password)
+        //{
+        //    string sqlStatement = "SELECT * FROM wad_user where email = @email and password = @password";
+        //    MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
-            try
-            {
-                MySqlDataReader databaseReader;
+        //    try
+        //    {
+        //        MySqlDataReader databaseReader;
 
-                connection.GetConnection().Open();
+        //        connection.GetConnection().Open();
 
-                command.Parameters.AddWithValue("@email", email);
-                command.Parameters.AddWithValue("@password", password);
+        //        command.Parameters.AddWithValue("@email", email);
+        //        command.Parameters.AddWithValue("@password", password);
 
-                databaseReader = command.ExecuteReader();
+        //        databaseReader = command.ExecuteReader();
 
-                User user;
+        //        User user;
 
-                while (databaseReader.Read())
-                {
+        //        while (databaseReader.Read())
+        //        {
 
 
-                    user = new User(databaseReader.GetInt32("id"), databaseReader.GetString("firstName"), databaseReader.GetString("lastName"), databaseReader.GetString("email"), databaseReader.GetString("adress"), databaseReader.GetString("password"), databaseReader.GetString("role"));
-                    return user;
-                }
+        //            user = new User(databaseReader.GetInt32("id"), databaseReader.GetString("firstName"), databaseReader.GetString("lastName"), databaseReader.GetString("email"), databaseReader.GetString("adress"), databaseReader.GetString("password"), databaseReader.GetString("role"));
+        //            return user;
+        //        }
 
-            }
-            catch (MySqlException ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                connection.GetConnection().Close();
-            }
-            return null;
-        }
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        connection.GetConnection().Close();
+        //    }
+        //    return null;
+        //}
 
         public User GetUser(int id)
         {
@@ -154,7 +154,7 @@ namespace DAL
 
         public void AddUser(User u)
         {
-            string sqlStatement = "INSERT INTO wad_user (firstName, lastName, email, adress,  password) VALUES (@firstName, @lastName,  @email , @adress, @password);";
+            string sqlStatement = "INSERT INTO wad_user (firstName, lastName, email, adress,  password, role) VALUES (@firstName, @lastName,  @email , @adress, @password,@role);";
             MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
 
             command.Parameters.AddWithValue("@firstName", u.FName);
@@ -162,7 +162,7 @@ namespace DAL
             command.Parameters.AddWithValue("@email", u.Email);
             command.Parameters.AddWithValue("@adress", u.Adress);
             command.Parameters.AddWithValue("@password", u.Password);
-            command.Parameters.AddWithValue("@role", "User");
+            command.Parameters.AddWithValue("@role", u.Role);
             try
             {
                 int n;
@@ -185,36 +185,7 @@ namespace DAL
 
 
 
-        public void AddAdministrator(User u)
-        {
-            string sqlStatement = "INSERT INTO wad_user (firstName, lastName, email, adress,  password) VALUES (@firstName, @lastName,  @email , @adress, @password);";
-            MySqlCommand command = new MySqlCommand(sqlStatement, connection.GetConnection());
-
-            command.Parameters.AddWithValue("@firstName", u.FName);
-            command.Parameters.AddWithValue("@lastname", u.LName);
-            command.Parameters.AddWithValue("@email", u.Email);
-            command.Parameters.AddWithValue("@adress", u.Adress);
-            command.Parameters.AddWithValue("@password", u.Password);
-            command.Parameters.AddWithValue("@role", "Administrator");
-            try
-            {
-                int n;
-
-                connection.GetConnection().Open();
-
-                n = command.ExecuteNonQuery();
-
-            }
-            catch (MySqlException ex)
-            {
-                throw ex;
-
-            }
-            finally
-            {
-                connection.GetConnection().Close();
-            }
-        }
+        
 
         public void EditUser(User u)
         {

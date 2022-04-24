@@ -56,7 +56,7 @@ namespace Modules
 
         public override string ToString()
         {
-            return $"{ProdName} {ProdCategory} {ProdPrice}";
+            return $"{ProdName} {ProdCategory} {ProdPrice} ";
         }
 
         public double GetPrice()

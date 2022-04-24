@@ -16,5 +16,7 @@ namespace Modules
 
         void EditOrder(Order o, Status status);
 
+        void UpdateCurrentOrder(Order order, int quantity);
+
     }
 }

@@ -29,29 +29,42 @@ namespace WrestlingStore_S2.Pages
             Product = pm.GetProduct(id);
         }
 
-        public void OnPost()
+        public void OnPost(int id)
         {
-            pm.RemoveProduct(Product);
+            //Product = pm.GetProduct(id);
+            //pm.RemoveProduct(Product);
         }
 
         public IActionResult OnPostAddToCart(string name)
         {
-            User user = um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value);
-            Product product = pm.GetProductByName(name);
-            Order order = new Order(user, product, Order.Size, Order.Quantity, Status.Pending);
+            if (ModelState.IsValid)
+            {
 
-            om.AddOrder(order);
-            return RedirectToPage("Cart");
+
+                User user = um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value);
+                Product product = pm.GetProductByName(name);
+                Order order = new Order(user, product, Order.Size, Order.Quantity, Status.Pending);
+
+                om.AddOrder(order);
+                return RedirectToPage("Cart");
+            }
+            return Page();
         }
+
 
         public IActionResult OnPostAddToCart2(string name)
         {
-            User user = um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value);
-            Product product = pm.GetProductByName(name);
-            Order order = new Order(user, product, "NO SIZE", Order.Quantity, Status.Pending);
+            Order.Size = "NO SIZE";
+            if (ModelState.IsValid)
+            {
+                User user = um.GetUser(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email).Value);
+                Product product = pm.GetProductByName(name);
+                Order order = new Order(user, product, Order.Size, Order.Quantity, Status.Pending);
 
-            om.AddOrder(order);
-            return RedirectToPage("Cart");
+                om.AddOrder(order);
+                return RedirectToPage("Cart");
+            }
+            return Page();
         }
     }
 }

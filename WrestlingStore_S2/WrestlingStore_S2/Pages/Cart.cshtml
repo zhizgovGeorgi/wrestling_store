@@ -14,25 +14,25 @@
 <h1>Products you have chosen:</h1>
 @foreach (Order o in orders)
 {
-    if(o.Status is Status.Pending)
+    if (o.Status is Status.Pending)
     {
-    <div class="cartProduct">
-        <p>@o.Product.ProdName</p>
-       <img class="singleProductImage" src="@o.Product.ProdImg" />
+        <div class="cartProduct">
+            <p>@o.Product.ProdName</p>
+            <img class="singleProductImage" src="@o.Product.ProdImg" />
 
 
-        <p class="priceText">@o.Quantity x  @o.Product.ProdPrice = @o.TotalPrice $</p>
+            <p class="priceText">@o.Quantity x  @o.Product.ProdPrice = @Math.Round(o.TotalPrice, 2) $</p>
 
 
-        <form method="post"><input asp-route-id="@o.OrderId" type="submit" value="Delete Product From Cart" /></form>
+            <form method="post"><input asp-route-id="@o.OrderId" type="submit" value="Delete Product From Cart" /></form>
 
-    </div>
+        </div>
     }
 
 }
 
-<form method="post">
-    <button class="btn btn-default"   asp-page-handler="CompleteOrder">Complete Order</button>
+   <form method="post">
+    <button class="btn btn-default" asp-page-handler="CompleteOrder">Complete Order</button>
 </form>
 
 
@@ -45,5 +45,5 @@
 
 
 @section scripts{
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 }

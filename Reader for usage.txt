@@ -5,20 +5,20 @@ Its main purpose is to keep track of the back data of the website such as Creati
 structure them. What is more, the admin will be able to see all the users such as clients and if existing another administrator/s account/s.
 Which can be only created from the administrator via the desktop solution. Pay attention to that no clients accounts can be created or
 removed or editted from the administrator. And last but not the least- keepinck track of orderrs,confirming them , seeing them or even
-cancelling them.(Oredrs Part will be implemented in the future)
+cancelling them.
 
 
 Website:
 - Website is the part that is being mainly used by the Customers. Without any registration you can only see the products. You can also
-register in order to be able to add items to cart and finish order(Im still working on this path). There is also available profile 
+register in order to be able to add items to cart and finish order. There is also available profile 
 page once you register succesfully and log in. There is all your private info and log out function. What is more, you can log in as
 an Administrator, create and delete products, also see them and have Profile page.
 
 
 
 
-Credentials as Admin:
-- gm@abv.bg
+Credentials as Admin or you can create one in the Desktop Application:
+- g.antoanov@abv.bg
 - pass: 1234
 For a User, you can either register and create a new account or use:
 - mb@gmail.com

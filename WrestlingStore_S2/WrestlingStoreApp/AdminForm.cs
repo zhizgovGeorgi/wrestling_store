@@ -26,7 +26,7 @@ namespace WrestlingStoreApp
             om = new OrderManager(new OrderData());
             LoadProducts();
             LoadUsers();
-            LoadOrders();
+            LoadCompleteOrders();
             tbAdditionalInfo.Visible = false;
             lblAdditionalInfo.Visible = false;
             lblAdditionalInfo.Text = "";
@@ -64,7 +64,15 @@ namespace WrestlingStoreApp
 
                     }
                     Product product = new WrestlingAccessories(tbProdName.Text, tbProdCategory.Text, Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text);
-                    pm.AddProduct(product);
+                    if (pm.AddProduct(product) == true)
+                    {
+                        MessageBox.Show("Successful addition of product");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, there seems to be the same product!");
+                    }
                     LoadProducts();
                 }
 
@@ -168,6 +176,11 @@ namespace WrestlingStoreApp
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            if (lbProducts.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a product!");
+                return;
+            }
             pm.RemoveProduct((Product)lbProducts.SelectedItem);
             LoadProducts();
         }
@@ -195,10 +208,36 @@ namespace WrestlingStoreApp
 
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {
-            User user = new User(tbFName.Text, tbLName.Text, tbEmail.Text, tbAddress.Text, tbPassword.Text, "Administrator");
+            if (tbFName.Text =="")
+            {
+                MessageBox.Show("Please fill in First Name");
+                return;
+            }
+            else if (tbLName.Text == "")
+            {
+                MessageBox.Show("Please fill in last Name");
+                return;
+            }
+            else if(tbEmail.Text == "")
+            {
+                MessageBox.Show("Please fill in email");
+                return;
+            }
+            else if(tbAddress.Text == "")
+            {
+                MessageBox.Show("Please fill in Adress");
+                return;
+            }
+            else if (tbPassword.Text == "")
+            {
+                MessageBox.Show("Please fill in password");
+                return;
+            }
+
             try
             {
-                um.AddAdmin(user);
+                User user = new User(tbFName.Text, tbLName.Text, tbEmail.Text, tbAddress.Text, tbPassword.Text, "Administrator");
+                um.AddUser(user);
                 LoadUsers();
             }
             catch (System.FormatException)
@@ -211,6 +250,11 @@ namespace WrestlingStoreApp
 
         private void btnRemoveAdmin_Click(object sender, EventArgs e)
         {
+            if (lbUsers.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select an administrator");
+                return;
+            }
             User selectedUser = (User)lbUsers.SelectedItem;
             try
             {
@@ -247,7 +291,7 @@ namespace WrestlingStoreApp
             }
         }
 
-        private void LoadOrders()
+        private void LoadCompleteOrders()
         {
             lbOrders.Items.Clear();
             foreach (Order order in om.GetCartItems())
@@ -260,19 +304,199 @@ namespace WrestlingStoreApp
             }
         }
 
+        private void LoadConfirmedOrders()
+        {
+            lbOrders.Items.Clear();
+            foreach (Order order in om.GetCartItems())
+            {
+                if (order.Status == Status.Confirmed)
+                {
+
+                    lbOrders.Items.Add(order);
+                }
+            }
+        }
+
+        private void LoadDeclinedOrders()
+        {
+            lbOrders.Items.Clear();
+            foreach (Order order in om.GetCartItems())
+            {
+                if (order.Status == Status.Declined)
+                {
+
+                    lbOrders.Items.Add(order);
+                }
+            }
+        }
+        private void LoadAllOrders()
+        {
+            lbOrders.Items.Clear();
+            foreach (Order order in om.GetCartItems())
+            {
+                if (order.Status == Status.Declined || order.Status == Status.Confirmed || order.Status == Status.Confirmed)
+                {
+
+                    lbOrders.Items.Add(order);
+                }
+            }
+        }
+
         private void btnShow_Click_1(object sender, EventArgs e)
         {
-
+            if (rbCoplete.Checked)
+            {
+                LoadCompleteOrders();
+            }
+            else if (rbConfirmed.Checked)
+            {
+                lbOrders.Items.Clear();
+                LoadConfirmedOrders();
+            }
+            else if (rbDeclined.Checked)
+            {
+                lbOrders.Items.Clear();
+                LoadDeclinedOrders();
+            }
+            else if (rbAll.Checked)
+            {
+                lbOrders.Items.Clear();
+                LoadAllOrders();
+            }
         }
 
         private void btnDecline_Click(object sender, EventArgs e)
         {
-            om.EditOrder((Order)lbOrders.SelectedItem, Status.Declined);
+            Order oi = (Order)lbOrders.SelectedItem;
+            if (oi.Status == Status.Complete)
+            {
+                om.EditOrder(oi, Status.Declined);
+                LoadDeclinedOrders();
+            }
+            else
+            {
+                MessageBox.Show("Once an order is Confirmed it cannot be re-declined!");
+            }
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            om.EditOrder((Order)lbOrders.SelectedItem, Status.Confirmed);
+            Order oi = (Order)lbOrders.SelectedItem;
+            if (oi.Status == Status.Complete)
+            {
+                om.EditOrder(oi, Status.Confirmed);
+                LoadConfirmedOrders();
+            }
+            else
+            {
+                MessageBox.Show("Once an order is Declined it cannot be re-confirmed!");
+            }
+        }
+
+        private void lbProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbProducts.SelectedIndex < 0)
+            {
+                return;
+            }
+            Object productObject = lbProducts.SelectedItem;
+            if (!(productObject is Product))
+            {
+                return;
+            }
+            Product product = (Product)productObject;
+            tbProdID.Text = product.Prod_id.ToString();
+            tbProdName.Text = product.ProdName;
+            tbProdPrice.Text = product.ProdPrice.ToString();
+            tbProdCategory.Text = product.ProdCategory;
+            tbProdImg.Text = product.ProdImg;
+            if (product is WrestlingShoes)
+            {
+                tbAdditionalInfo.Text = ((WrestlingShoes)product).KindOfActivity;
+            }
+            else if (product is WrestlingClothes)
+            {
+                tbAdditionalInfo.Text = ((WrestlingClothes)product).Material;
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (lbProducts.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select a product first");
+                return;
+            }
+
+
+            Product p;
+            if (rbWrestlingAccessories.Checked)
+            {
+                p = new WrestlingAccessories(Convert.ToInt32(tbProdID.Text), tbProdName.Text, "Wrestling Accessories", Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text);
+                if (pm.EditProduct(p) == true)
+                {
+                    MessageBox.Show("Successful update of the product");
+                    LoadProducts();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Oops, sorry something went wrong, please try again later");
+                }
+            }
+            else if (rbWrestlingClothes.Checked)
+            {
+                p = new WrestlingClothes(Convert.ToInt32(tbProdID.Text), tbProdName.Text, "Wrestling Clothes", Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text, tbAdditionalInfo.Text);
+                if (pm.EditProduct(p) == true)
+                {
+                    MessageBox.Show("Successful update of the product");
+                    LoadProducts();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Oops, sorry something went wrong, please try again later");
+                }
+            }
+            else if (rbWrestlingShoes.Checked)
+            {
+                p = new WrestlingShoes(Convert.ToInt32(tbProdID.Text), tbProdName.Text, "Wrestling Shoes", Convert.ToDouble(tbProdPrice.Text), tbProdImg.Text, tbAdditionalInfo.Text);
+                if (pm.EditProduct(p) == true)
+                {
+                    MessageBox.Show("Successful update of the product");
+                    LoadProducts();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Oops, sorry something went wrong, please try again later");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a category!");
+            }
+
+        }
+
+        private void lbUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbUsers.SelectedIndex < 0)
+            {
+                return;
+            }
+            Object userObject = lbUsers.SelectedItem;
+            if (!(userObject is User))
+            {
+                return;
+            }
+            User user = (User)userObject;
+            tbID.Text = user.Id.ToString();
+            tbFName.Text = user.FName;
+            tbLName.Text = user.LName;
+            tbEmail.Text = user.Email;
+            tbAddress.Text = user.Adress;
         }
     }
 }
