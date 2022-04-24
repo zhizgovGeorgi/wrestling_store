@@ -1,0 +1,15 @@
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\DAL.deps.json
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\DAL.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\DAL.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\LogicLayer.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\Modules.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\LogicLayer.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\bin\Release\netstandard2.0\Modules.pdb
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.csproj.CopyComplete
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.dll
+C:\Users\Georgi\Desktop\WAD-Assignment\wad-s2_assignment\WrestlingStore_S2\DAL\obj\Release\netstandard2.0\DAL.pdb

@@ -1,0 +1,280 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 63%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    background-color: rgb(24, 143, 212);
+    color: white;
+    padding: 1.3rem;
+}
+
+.welcome {
+    color: black;
+    margin-left: 40rem;
+}
+
+form {
+    background-color: white;
+    margin: 1.2rem;
+    margin-left: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.clear {
+    clear: both;
+}
+
+nav ul {
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav li {
+    float: right;
+    margin: 0rem 4rem;
+}
+
+footer {
+    text-align: center;
+    background: rgb(24, 143, 212);
+    color: white;
+    padding: 3rem;
+    margin-top: auto;
+}
+
+#grid_container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    justify-content: space-between;
+    margin-left: 40rem;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+    width: 500px;
+    justify-content: space-evenly;
+}
+
+    #grid_container div {
+        margin: auto;
+        width: 150px;
+        height: 150px;
+        border: 1px solid #000;
+        margin: 3rem;
+    }
+
+#searchbar {
+    margin-top: 2rem;
+}
+
+.logo {
+    width: 7%;
+    height: 7%;
+}
+
+.categories {
+    font-size: 1.2rem;
+    padding: 4rem;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .categories li {
+        margin: 0 10rem ;
+    }
+
+.initials p {
+    float: left;
+    margin-bottom: 1.7rem;
+}
+
+
+.infofilling {
+    margin-right: 8rem;
+}
+
+.homepicscontainer {
+    display: flex;
+    width: 100%;
+}
+
+.hompic {
+    width: 33%;
+}
+
+.profile {
+    display: flex;
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2rem;
+    justify-content: space-evenly;
+}
+
+.login {
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    margin-left: 40rem;
+}
+
+    .login input,
+    .login label,
+    .login textarea {
+        display: block;
+        font-size: 2.4rem;
+    }
+
+    .login input,
+    .login textarea {
+        margin: 1rem auto;
+        width: 40%;
+    }
+
+    .login label {
+        margin-bottom: 2.5rem;
+    }
+
+    .login button {
+        margin-bottom: 10rem;
+        padding: 1rem 4rem;
+        background: rgb(24, 143, 212);
+        border: none;
+        color: white;
+        width: 40%;
+    }
+
+.register {
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 4rem;
+    justify-content: space-between;
+}
+
+.paragraph {
+    display: flex;
+    justify-content: space-between;
+}
+
+.register input,
+.register label,
+.register textarea {
+    display: block;
+    font-size: 2.4rem;
+}
+
+.register input,
+.register textarea {
+    margin: 1rem auto;
+    width: 40%;
+}
+
+.register label {
+    margin-bottom: 2.5rem;
+}
+
+.register button {
+    margin-bottom: 10rem;
+    padding: 1rem 4rem;
+    background: rgb(24, 143, 212);
+    border: none;
+    color: white;
+    width: 40%;
+}
+
+span {
+    color: red;
+}
+
+.prod_image {
+    width: 75%;
+    margin-left: 1.7rem;
+    margin-right: 1.7rem;
+    margin-top: 1.7rem;
+}
+
+.product {
+    font-size: 1.5rem;
+}
+
+.priceText {
+    text-align: center;
+}
+
+.addProd input,
+.addProd label,
+.addProd textarea {
+    display: block;
+    font-size: 2.4rem;
+}
+
+.addProd input,
+.addProd textarea {
+    margin: 1rem auto;
+    width: 40%;
+}
+
+.addProd label {
+    margin-bottom: 2.5rem;
+}
+
+.addProd button {
+    margin-bottom: 10rem;
+    padding: 1rem 4rem;
+    background: rgb(24, 143, 212);
+    border: none;
+    color: white;
+    width: 60%;
+}
+
+.addProd {
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 50rem;
+    justify-content: space-between;
+}
+
+.singleProductImage {
+    width: 30%;
+    margin-bottom: 10rem;
+}
+
+.singleProductInfo {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 100rem;
+    margin-right: 10rem;
+    margin-top: 10rem;
+    text-align: center;
+}
+
+.cartProduct {
+    width: 75%;
+}
+
+.addingToCart{
+    margin-right: 10rem;
+}
+
+.singleProduct{
+
+}
+
+

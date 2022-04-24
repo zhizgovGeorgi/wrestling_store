@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACKq5RpZ7+kaTrf8Q0Pwo8gAAAAACAAAAAAAQZgAAAAEAACAAAADez2Vui6fOYilqjTwo35vf8+aXaxow6pP5NV5sNKAnJgAAAAAOgAAAAAIAACAAAAA49j99oC2oe/tBYBU/RLO83rUnUJ79YsQMZ/bzlplbGSAAAAAPswxYbxK9s1MkZaChOvk9dazfC6rB9/jpQoFzVvLuP0AAAABJmQ5otPwnarKDg/Bv8HAeShdE2JS+bhO1JF8r+IdlW6ydAYQGnFJBi2vd/KwKZx/GG6ajf3OB9BXMfZ1PNhf0</EncryptedPassword>
+    <_PublishTargetUrl>ftps://i463263.luna.fhict.nl/domains/i463263.luna.fhict.nl</_PublishTargetUrl>
+    <History>True|2022-04-24T20:15:27.7698342Z;True|2022-04-24T22:09:07.3107650+02:00;True|2022-04-24T22:04:35.6126802+02:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="BouncyCastle.Crypto.dll">
+      <publishTime>03/18/2019 11:53:36</publishTime>
+    </File>
+    <File Include="DAL.dll">
+      <publishTime>04/24/2022 19:32:03</publishTime>
+    </File>
+    <File Include="DAL.pdb">
+      <publishTime>04/24/2022 19:32:03</publishTime>
+    </File>
+    <File Include="Google.Protobuf.dll">
+      <publishTime>11/13/2020 15:09:34</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.dll">
+      <publishTime>09/12/2020 01:11:58</publishTime>
+    </File>
+    <File Include="K4os.Compression.LZ4.Streams.dll">
+      <publishTime>09/12/2020 01:11:58</publishTime>
+    </File>
+    <File Include="K4os.Hash.xxHash.dll">
+      <publishTime>07/03/2019 20:39:02</publishTime>
+    </File>
+    <File Include="LogicLayer.dll">
+      <publishTime>04/24/2022 19:32:03</publishTime>
+    </File>
+    <File Include="LogicLayer.pdb">
+      <publishTime>04/24/2022 19:32:03</publishTime>
+    </File>
+    <File Include="Modules.dll">
+      <publishTime>04/24/2022 19:32:02</publishTime>
+    </File>
+    <File Include="Modules.pdb">
+      <publishTime>04/24/2022 19:32:02</publishTime>
+    </File>
+    <File Include="MySql.Data.dll">
+      <publishTime>12/01/2021 23:08:56</publishTime>
+    </File>
+    <File Include="runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 10:01:34</publishTime>
+    </File>
+    <File Include="System.ComponentModel.Annotations.dll">
+      <publishTime>10/19/2020 18:37:54</publishTime>
+    </File>
+    <File Include="System.Configuration.ConfigurationManager.dll">
+      <publishTime>11/20/2017 18:09:04</publishTime>
+    </File>
+    <File Include="System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>10/19/2020 18:47:52</publishTime>
+    </File>
+    <File Include="System.Security.Cryptography.ProtectedData.dll">
+      <publishTime>07/19/2017 10:01:34</publishTime>
+    </File>
+    <File Include="Ubiety.Dns.Core.dll">
+      <publishTime>12/01/2021 23:07:24</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>04/24/2022 22:15:20</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.deps.json">
+      <publishTime>04/24/2022 22:15:18</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.dll">
+      <publishTime>04/24/2022 22:15:16</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.exe">
+      <publishTime>04/24/2022 22:15:17</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.pdb">
+      <publishTime>04/24/2022 22:15:16</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.runtimeconfig.json">
+      <publishTime>04/24/2022 19:32:06</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.Views.dll">
+      <publishTime>04/24/2022 22:15:18</publishTime>
+    </File>
+    <File Include="WrestlingStore_S2.Views.pdb">
+      <publishTime>04/24/2022 22:15:18</publishTime>
+    </File>
+    <File Include="wwwroot/css/site.css">
+      <publishTime>04/16/2022 21:44:53</publishTime>
+    </File>
+    <File Include="wwwroot/favicon.ico">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/images/logo.jpg">
+      <publishTime>09/09/2021 15:02:36</publishTime>
+    </File>
+    <File Include="wwwroot/images/wrshoe2.jpg">
+      <publishTime>09/23/2021 13:12:12</publishTime>
+    </File>
+    <File Include="wwwroot/images/wrshoes3.jpg">
+      <publishTime>09/23/2021 13:18:00</publishTime>
+    </File>
+    <File Include="wwwroot/images/wr_shoe.jpg">
+      <publishTime>09/10/2021 11:29:02</publishTime>
+    </File>
+    <File Include="wwwroot/js/site.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.css.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.js.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/bootstrap/LICENSE">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/additional-methods.min.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/dist/jquery.validate.min.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery-validation/LICENSE.md">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.js">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/dist/jquery.min.map">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="wwwroot/lib/jquery/LICENSE.txt">
+      <publishTime>02/18/2022 13:20:02</publishTime>
+    </File>
+    <File Include="ZstdNet.dll">
+      <publishTime>12/01/2021 23:07:24</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
